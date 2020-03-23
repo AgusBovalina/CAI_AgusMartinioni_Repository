@@ -13,7 +13,6 @@ namespace Repaso
         
         {
             
-
             Console.WriteLine("Elije el ejercicio a realizar del 1 al 10");
             string option = Console.ReadLine();
             string salir =  "n";
@@ -71,8 +70,9 @@ namespace Repaso
             int nroRegistro;
             string registroString;
 
-            registroString = Console.ReadLine();
+            Console.WriteLine("Ingrese los últimos 3 digitos de su registro");
 
+            registroString = Console.ReadLine();
 
 
             int.TryParse(registroString, out nroRegistro);
@@ -118,6 +118,7 @@ namespace Repaso
             string registroString;
             bool primo = false;
 
+            Console.WriteLine("Ingrese los últimos 3 digitos de su registro");
             registroString = Console.ReadLine();
 
             int.TryParse(registroString, out nroRegistro);
@@ -172,6 +173,8 @@ namespace Repaso
         {
             string palabra1;
             bool palindromo = false ;
+
+            Console.WriteLine("Ingrese una palabra");
             palabra1 = Console.ReadLine();
 
             for (int i = 0; i < palabra1.Length; i++)
@@ -204,7 +207,10 @@ namespace Repaso
             string palabra2;
             bool anagrama = false;
 
+            Console.WriteLine("Ingrese una palabra");
             palabra1 = Console.ReadLine();
+
+            Console.WriteLine("Ingrese otra palabra");
             palabra2 = Console.ReadLine();
 
             string[] array1 = new string[palabra1.Length];
@@ -258,6 +264,7 @@ namespace Repaso
 
         public static void Ejercicio5()
         {
+            Console.WriteLine("Ingrese un número de 5 cifras palabra");
             string nroIngresado = Console.ReadLine();
             string[] aux = new string[nroIngresado.Length];
             string nroFinal = "";
@@ -279,7 +286,9 @@ namespace Repaso
             int a;
             int b;
 
+            Console.WriteLine("Ingrese un número entero");
             int.TryParse(Console.ReadLine(), out a);
+            Console.WriteLine("Ingrese otro número entero");
             int.TryParse(Console.ReadLine(), out b);
 
             int suma = a + b;
@@ -309,7 +318,6 @@ namespace Repaso
 
             Array.Sort(nros);
 
-            
             
             Console.WriteLine("El máximo es: " + nros[nros.Length-1] + "el intermedio es: " + nros[nros.Length/2] + "el mínimo es; " + nros[nros.Length-nros.Length]);
             Console.ReadKey();
