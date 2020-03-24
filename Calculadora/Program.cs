@@ -13,9 +13,7 @@ namespace Calculadora
 
         static void Main(string[] args)
         {
-            int a=0;
-            int b=0;
-
+            
             string op;
             bool continuar = true;
 
@@ -33,13 +31,13 @@ namespace Calculadora
                     case "S":
 
                         
-                        resultados.Add(Operaciones.Sumar(Pedidos.IngresoNros(), Pedidos.IngresoNros()));
+                        resultados.Add(Operaciones.Sumar());
                         
                         break;
 
                     case "R":
                         
-                        resultados.Add(Operaciones.Restar(Pedidos.IngresoNros(), Pedidos.IngresoNros()));                        
+                        resultados.Add(Operaciones.Restar());                        
                         break;
 
                     case "E":

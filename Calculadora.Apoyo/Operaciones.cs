@@ -8,14 +8,28 @@ namespace Calculadora.Apoyo
 {
     public static class Operaciones
     {
-        public static int Sumar(int a, int b)
+        public static int Sumar()
         {
+            int a;
+            int b;
+
+            a = Pedidos.PedirInt();
+
+            b = Pedidos.PedirInt();
+
             Console.WriteLine(a+b);
             return a + b;
         }
 
-        public static int Restar(int a, int b)
+        public static int Restar()
         {
+            int a;
+            int b;
+
+            a = Pedidos.PedirInt();
+
+            b = Pedidos.PedirInt();
+
             Console.WriteLine(a - b);
             return a - b;
         }
@@ -23,18 +37,33 @@ namespace Calculadora.Apoyo
     }
 
     public static class Pedidos
-    { 
+    {
 
-        public static int IngresoNros()
+        public static int PedirInt()
         {
+            bool loop = true;
             int a;
-            
 
-            Console.WriteLine("Ingrese un número");
+            do
+            {
 
-            return a = Convert.ToInt32(Console.ReadLine());
 
-            
+                Console.WriteLine("Ingrese un número");
+
+                if (!int.TryParse(Console.ReadLine(), out a))
+                {
+                    Console.WriteLine("El número ingresado no es correcto");
+                    loop = true;
+
+                }
+                else
+                {
+                    loop = false;
+                    return a;
+                }
+            } while (loop); 
+
+            return a;
         }
     }
 }
