@@ -4,3 +4,9 @@ C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_887425_
 C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_887425_Repository\Repaso\bin\Debug\Repaso.pdb
 C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_887425_Repository\Repaso\obj\Debug\Repaso.exe
 C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_887425_Repository\Repaso\obj\Debug\Repaso.pdb
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Repaso\bin\Debug\Repaso.exe.config
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Repaso\bin\Debug\Repaso.exe
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Repaso\bin\Debug\Repaso.pdb
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Repaso\obj\Debug\Repaso.csprojAssemblyReference.cache
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Repaso\obj\Debug\Repaso.exe
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Repaso\obj\Debug\Repaso.pdb

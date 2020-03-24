@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F6ECFB08-D910-4784-BF42-16A815FA2430}</ProjectGuid>
+    <ProjectGuid>{4F4A6A48-7B9F-45EE-97CF-539C06881DDB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>IntroPOO</RootNamespace>
-    <AssemblyName>IntroPOO</AssemblyName>
+    <RootNamespace>Calculadora</RootNamespace>
+    <AssemblyName>Calculadora</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Calculadora.Apoyo\Calculadora.Apoyo.csproj">
+      <Project>{9a1cd909-a419-4a06-ad90-b798d065faeb}</Project>
+      <Name>Calculadora.Apoyo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

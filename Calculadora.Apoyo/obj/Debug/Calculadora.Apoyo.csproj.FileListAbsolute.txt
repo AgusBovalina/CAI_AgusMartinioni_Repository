@@ -1,0 +1,5 @@
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Calculadora.Apoyo\bin\Debug\Calculadora.Apoyo.dll
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Calculadora.Apoyo\bin\Debug\Calculadora.Apoyo.pdb
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Calculadora.Apoyo\obj\Debug\Calculadora.Apoyo.csprojAssemblyReference.cache
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Calculadora.Apoyo\obj\Debug\Calculadora.Apoyo.dll
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Calculadora.Apoyo\obj\Debug\Calculadora.Apoyo.pdb

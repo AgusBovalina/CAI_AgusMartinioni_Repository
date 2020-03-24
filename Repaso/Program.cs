@@ -11,13 +11,14 @@ namespace Repaso
         static void Main(string[] args)
         
         
-        {
+        
+       {
             
-            Console.WriteLine("Elije el ejercicio a realizar del 1 al 10");
-            string option = Console.ReadLine();
             string salir =  "n";
             do
             {
+                Console.WriteLine("Elije el ejercicio a realizar del 1 al 10");
+                string option = Console.ReadLine();
 
                 switch (option)
                 {
@@ -172,7 +173,9 @@ namespace Repaso
         public static void Ejercicio3()
         {
             string palabra1;
-            bool palindromo = false ;
+           
+
+            List<bool> pali = new List<bool> ();
 
             Console.WriteLine("Ingrese una palabra");
             palabra1 = Console.ReadLine();
@@ -181,14 +184,18 @@ namespace Repaso
             {
                 if (palabra1[i] == palabra1[palabra1.Length - 1 - i])
                 {
-                    palindromo = true;
+                    pali.Add(true);
                 } else
                 {
-                    palindromo = false;
+                    pali.Add(false);
                 }
 
+             
             }
-                if (palindromo)
+
+            pali.Sort();
+
+                if (pali[0])
                 {
                     Console.WriteLine("La palabra es un palindromo");
                 } else
@@ -213,8 +220,9 @@ namespace Repaso
             Console.WriteLine("Ingrese otra palabra");
             palabra2 = Console.ReadLine();
 
-            string[] array1 = new string[palabra1.Length];
-            string[] array2 = new string[palabra2.Length];
+            List<char> array1 = new List<char>();
+            List<char> array2 = new List<char>();
+            List<bool> anag = new List<bool>();
 
 
             if (palabra1.Length != palabra2.Length)
@@ -226,33 +234,36 @@ namespace Repaso
 
                 for (int i = 0; i < palabra1.Length; i++)
                 {
-                    array1[i] = palabra1[i].ToString();
-                    array2[i] = palabra2[i].ToString();
+                    array1.Add(palabra1[i]);
+                    array2.Add(palabra2[i]);
                 }
-                Array.Sort(array1);
-                Array.Sort(array2);
+                array1.Sort();
+                array2.Sort();
 
                 for (int i = 0; i < palabra1.Length; i++)
                 {
                     
-
                     if (array1[i] == array2[i])
                     {
+                        anag.Add(true);
                         anagrama = true;
                     }
                     else
                     {
-                        anagrama = false;
+                        anag.Add(false);
                     }
                 }
 
-                if (anagrama)
+                anag.Sort();
+
+                if (anag[0] == false || !anagrama)
                 {
-                    Console.WriteLine("Las palabras ingresadas son un anagrama");
+                    Console.WriteLine("Las palabras ingresadas no son un anagrama");
+                    
                 }
                 else
                 {
-                    Console.WriteLine("Las palabras ingresadas no son un anagrama");
+                    Console.WriteLine("Las palabras ingresadas son un anagrama");
                 }
                 
             }
@@ -260,6 +271,7 @@ namespace Repaso
             Console.ReadKey();
 
 
+        
         }
 
         public static void Ejercicio5()
