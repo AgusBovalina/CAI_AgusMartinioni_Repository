@@ -17,7 +17,7 @@ namespace Calculadora.Apoyo
 
             b = Pedidos.PedirInt();
 
-            Console.WriteLine(a+b);
+            Console.WriteLine("El resultado es: " + (a + b));
             return a + b;
         }
 
@@ -30,7 +30,7 @@ namespace Calculadora.Apoyo
 
             b = Pedidos.PedirInt();
 
-            Console.WriteLine(a - b);
+            Console.WriteLine("El resultado es: " + (a - b));
             return a - b;
         }
 
@@ -46,7 +46,6 @@ namespace Calculadora.Apoyo
 
             do
             {
-
 
                 Console.WriteLine("Ingrese un número");
 

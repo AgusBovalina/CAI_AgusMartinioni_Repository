@@ -30,7 +30,6 @@ namespace Calculadora
                 {
                     case "S":
 
-                        
                         resultados.Add(Operaciones.Sumar());
                         
                         break;
