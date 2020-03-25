@@ -30,13 +30,13 @@ namespace Calculadora
                 {
                     case "S":
 
-                        resultados.Add(Operaciones.Sumar());
+                        resultados.Add(Operaciones.Sumar(Pedidos.PedirInt(), Pedidos.PedirInt()));
                         
                         break;
 
                     case "R":
                         
-                        resultados.Add(Operaciones.Restar());                        
+                        resultados.Add(Operaciones.Restar(Pedidos.PedirInt(), Pedidos.PedirInt()));                        
                         break;
 
                     case "E":
