@@ -8,30 +8,39 @@ namespace Calculadora.Apoyo
 {
     public static class Operaciones
     {
-        public static int Sumar()
+        public static int Sumar(int a, int b)
         {
-            int a;
-            int b;
-
-            a = Pedidos.PedirInt();
-
-            b = Pedidos.PedirInt();
-
+         
             Console.WriteLine("El resultado es: " + (a + b));
             return a + b;
         }
 
-        public static int Restar()
+        public static int Restar(int a, int b)
         {
-            int a;
-            int b;
-
-            a = Pedidos.PedirInt();
-
-            b = Pedidos.PedirInt();
-
             Console.WriteLine("El resultado es: " + (a - b));
             return a - b;
+        }
+
+        public static int Multiplicar(int a, int b)
+        {
+            Console.WriteLine("El resultado es: " + (a * b));
+            return a * b;
+        }
+
+        public static int Dividir(int a, int b)
+        {
+           
+            Console.WriteLine("El resultado es: " + (a / b));
+            //Operaciones.Resto(a, b);
+            return a / b;
+
+        }
+
+        public static void Resto(int a, int b)
+        {
+            Console.WriteLine("El resto es: " + (a % b));
+            
+
         }
 
     }
