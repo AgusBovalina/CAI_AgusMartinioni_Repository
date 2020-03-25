@@ -8,5 +8,9 @@ namespace Apoyo
 {
     class Almacen
     {
+        private double metrosCuadrados;
+        private string tipoProductos;
+        private string diasDeAtencion;
+        private TimeSpan time;
     }
 }
