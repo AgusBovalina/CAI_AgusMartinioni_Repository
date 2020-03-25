@@ -23,7 +23,7 @@ namespace Calculadora
             do
             {
 
-                Console.WriteLine("Elija S para sumar, R para restar o E para salir");
+                Console.WriteLine("Elija S para sumar, R para restar, M para Multiplicar, D para dividir o E para salir");
                 op = Console.ReadLine().ToUpper();
 
                 switch (op)
@@ -37,6 +37,16 @@ namespace Calculadora
                     case "R":
                         
                         resultados.Add(Operaciones.Restar(Pedidos.PedirInt(), Pedidos.PedirInt()));                        
+                        break;
+
+                    case "M":
+
+                        resultados.Add(Operaciones.Multiplicar(Pedidos.PedirInt(), Pedidos.PedirInt()));
+                        break;
+
+                    case "D":
+
+                        resultados.Add(Operaciones.Dividir(Pedidos.PedirInt(), Pedidos.PedirInt()));
                         break;
 
                     case "E":
