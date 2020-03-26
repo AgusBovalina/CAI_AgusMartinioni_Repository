@@ -7,17 +7,38 @@ using System.Threading.Tasks;
 
 namespace Apoyo
 {
-    enum palo  { Pica, Corazón, Trébol, Diamante};
+    enum palo  { Pica=1, Corazón, Trébol, Diamante, Oro, Espada, Copa, Basto };
     
     
     
     class Carta
     {
         //Atributos
+        private string mazo;
         private palo palo;
         private int valor;
 
         //Propiedades
+
+        public string Mazo
+        {
+            get
+            {
+                return mazo;
+            }
+
+            private set 
+            {
+                if (palo > palo.Diamante)
+                {
+                    mazo = "Español";
+                }
+                else
+                {
+                    mazo = "Poker";
+                }
+            }
+        }
         public palo Palo
         {
             get 
