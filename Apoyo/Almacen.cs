@@ -89,7 +89,7 @@ namespace Apoyo
 
         public void RealizarDelivery()
         {
-            if (Delivery)
+            if (delivery)
             {
 
                 Console.WriteLine("Realiza delivery");

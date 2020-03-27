@@ -11,10 +11,10 @@ namespace Apoyo
         private string nombre;
         private string especie;
         private DateTime fechaDeNacimiento;
-        private string nombreDueño;
-        private string nroDueño;
-        private double peso;
         private bool cirugiasAnteriores;
+        private bool castrado;
+        private string nombreDueño;
+        private string telefonoDueño;
 
         public string Nombre
         {
@@ -64,6 +64,29 @@ namespace Apoyo
             }
         }
 
+        public bool Cirugias
+        {
+            get
+            {
+                return cirugiasAnteriores;
+            }
+            set
+            {
+                cirugiasAnteriores = value;
+            }
+        }
+
+        public bool Castrado
+        {
+            get
+            {
+                return castrado;
+            }
+            set
+            {
+                castrado = value;
+            }
+        }
         public string NombreDueño
         {
             get
@@ -80,13 +103,28 @@ namespace Apoyo
         {
             get
             {
-                return TelefonoDueño;
+                return telefonoDueño;
             }
             set
             {
-                TelefonoDueño = value;
+                telefonoDueño = value;
             }
         }
+
+        public void Comer()
+        {
+            Console.WriteLine("La mascota come correctamente");
+        }
+
+        public void Riesgo(string nombre, int edad, string especie)
+        {
+            if (edad > 10 && especie == "perro")
+            {
+                Console.WriteLine("No se recomienda cirugía");
+            }
+        }
+
+
     }
 
 

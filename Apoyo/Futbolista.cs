@@ -105,15 +105,15 @@ namespace Apoyo
         {
             Console.WriteLine("El jugador hizo un gol");
 
-            //Se usan las variables o las propiedades?
-            GolesConvertidos =  cantGoles;
+            
+            golesConvertidos =  cantGoles;
         }
 
-        public void JugarEdad()
+        public void Jugar()
         {
-            if (Edad > 45)
+            if (edad > 45)
             {
-                Console.WriteLine("El jugador debería retirarse");
+                Console.WriteLine("El jugador no continua ejerciendo");
 
             } else
             {
