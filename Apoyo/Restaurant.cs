@@ -12,6 +12,7 @@ namespace Apoyo
         private int capacidad;
         private string tipoComida;
         private bool delivery;
+        private int capacidadActual;
 
 
         public string Nombre
@@ -53,13 +54,29 @@ namespace Apoyo
 
         public bool Delivery
         {
+            get
+            {
+                return delivery;
+            }
             set
             {
                 delivery = value;
             }
         }
 
-        //Metodos
+        public int CapacidadActual
+        {
+            get
+            {
+                return capacidadActual;
+            }
+            set
+            {
+                capacidadActual= value;
+            }
+        }
+
+        
         public void RealizarDelivery()
         {
             if (delivery)
@@ -76,8 +93,19 @@ namespace Apoyo
 
         public void TomarReserva (int cantComensales)
         {
-            //ver como codear algo aca
+            if (cantComensales + capacidadActual > capacidad)
+            { 
+                
+                Console.WriteLine("No se aceptan más reservas");
+            } else
+            {
+                Console.WriteLine("Su reserva fue tomada");
+                capacidadActual += cantComensales;
+
+            }
         }
+
+
 
     }
 }

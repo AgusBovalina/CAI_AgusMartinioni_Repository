@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Apoyo
 {
-    enum palo  { Pica=1, Corazón, Trébol, Diamante, Oro, Espada, Copa, Basto };
+    enum palo  { Pica=1, Corazón, Trébol, Diamante, Oro, Espada, Copa, Basto, Comodin };
     
     
     
@@ -29,7 +29,7 @@ namespace Apoyo
 
             private set 
             {
-                if (palo > palo.Diamante)
+                if (palo > palo.Diamante && palo <palo.Comodin)
                 {
                     mazo = "Español";
                 }
@@ -68,7 +68,16 @@ namespace Apoyo
 
         }
 
-        //Métodos
+        public void Jugar()
+        {
+            if (palo != palo.Comodin)
+            {
+
+                Console.WriteLine("La carta a jugada es el " + valor + " de " + palo);
+            }
+        }
+
+
         
 
     }
