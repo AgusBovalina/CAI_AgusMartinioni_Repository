@@ -82,7 +82,7 @@ namespace Apoyo
             set
             {
                 // Para ir sumando a medida que mete goles
-                golesConvertidos += value;
+                golesConvertidos = value;
             }
         }
 
@@ -106,12 +106,12 @@ namespace Apoyo
             Console.WriteLine("El jugador hizo un gol");
 
             
-            golesConvertidos =  cantGoles;
+            golesConvertidos +=  cantGoles;
         }
 
         public void Jugar()
         {
-            if (edad > 45)
+            if (Edad > 45)
             {
                 Console.WriteLine("El jugador no continua ejerciendo");
 

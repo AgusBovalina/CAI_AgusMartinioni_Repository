@@ -15,7 +15,7 @@ namespace IntroPOO
              * ver: Mas metodos
              * 
              * 
-             * Carta:
+             * Carta:                 
              * ver:faltan metodos
              * 
              * 

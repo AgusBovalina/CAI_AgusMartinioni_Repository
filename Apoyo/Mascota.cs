@@ -62,6 +62,7 @@ namespace Apoyo
 
                 return Convert.ToInt32(today - fechaDeNacimiento);
             }
+
         }
 
         public bool Cirugias
@@ -116,12 +117,13 @@ namespace Apoyo
             Console.WriteLine("La mascota come correctamente");
         }
 
-        public void Riesgo(string nombre, int edad, string especie)
+        public void Riesgo(bool llueve)
         {
-            if (edad > 10 && especie == "perro")
+           
+            if (Edad > 10 && especie == "perro")
             {
-                Console.WriteLine("No se recomienda cirugía");
-            }
+                Console.WriteLine("No se recomienda cirugía");        
+            } 
         }
 
 

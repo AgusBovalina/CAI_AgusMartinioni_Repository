@@ -9,17 +9,18 @@ namespace Calculadora
 {
     class Program
     {
-        
+
 
         static void Main(string[] args)
         {
-            
+
             string op;
             bool continuar = true;
+            int resultado;
 
             List<int> resultados = new List<int>();
 
-            
+
             do
             {
 
@@ -30,44 +31,52 @@ namespace Calculadora
                 {
                     case "S":
 
-                        resultados.Add(Operaciones.Sumar(Pedidos.PedirInt(), Pedidos.PedirInt()));
-                        
+                        resultado = Operaciones.Sumar(PedirInt(), PedirInt());
+                        Console.WriteLine("El resultado es: " + resultado);
+                        resultados.Add(resultado);
+
                         break;
 
                     case "R":
-                        
-                        resultados.Add(Operaciones.Restar(Pedidos.PedirInt(), Pedidos.PedirInt()));                        
+
+                        resultado = Operaciones.Restar(PedirInt(), PedirInt());
+                        Console.WriteLine("El resultado es: " + resultado);
+                        resultados.Add(resultado);
                         break;
 
                     case "M":
 
-                        resultados.Add(Operaciones.Multiplicar(Pedidos.PedirInt(), Pedidos.PedirInt()));
+                        resultado = Operaciones.Multiplicar(PedirInt(), PedirInt());
+                        Console.WriteLine("El resultado es: " + resultado);
+                        resultados.Add(resultado);
                         break;
 
                     case "D":
 
-                        resultados.Add(Operaciones.Dividir(Pedidos.PedirInt(), Pedidos.PedirInt()));
+                        resultado = Operaciones.Dividir(PedirInt(), PedirInt());
+                        Console.WriteLine("El resultado es: " + resultado);
+                        resultados.Add(resultado);
                         break;
 
                     case "E":
 
-                        
-                            if (resultados.Count()<2)
-                            { 
-                                Console.WriteLine("Debe hacer como mínimo 2 operaciones antes de salir");
-                            }
-                            else
-                            {
-                                foreach (int resultado in resultados)
-                                {
-                                    Console.WriteLine(resultado);
 
-                                   
-                                }
-                                Console.ReadKey();
-                                continuar = false;
+                        if (resultados.Count() < 2)
+                        {
+                            Console.WriteLine("Debe hacer como mínimo 2 operaciones antes de salir");
+                        }
+                        else
+                        {
+                            foreach (int resu in resultados)
+                            {
+                                Console.WriteLine(resu);
+
+
                             }
-                        
+                            Console.ReadKey();
+                            continuar = false;
+                        }
+
                         break;
                     default:
                         Console.Write("La opción ingresada no es correcta");
@@ -76,17 +85,43 @@ namespace Calculadora
 
                 }
 
-                
+
 
             } while (continuar);
-
-
-
-
-
-
-            
-
         }
+
+            public int PedirInt()
+            {
+                bool loop = true;
+                int a;
+
+                do
+                {
+
+                    Console.WriteLine("Ingrese un número");
+
+                    if (!int.TryParse(Console.ReadLine(), out a))
+                    {
+                        Console.WriteLine("El número ingresado no es correcto");
+                        loop = true;
+
+                    }
+                    else
+                    {
+                        loop = false;
+                        return a;
+                    }
+                } while (loop);
+
+                return a;
+
+
+
+
+
+
+
+            }
+        
     }
 }
