@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repaso_2
+namespace ConsoleHelper
 {
-    class Program
+    class ValidationExceptions
     {
-        static void Main()
-        {
-            // Como 
-        }
     }
 }
