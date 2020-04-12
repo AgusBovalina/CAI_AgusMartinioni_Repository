@@ -31,7 +31,7 @@ namespace ConsoleHelper
             } while (loop);
         }
 
-       /* public static char InsertChar(string mensaje)
+        public static char InsertChar(string mensaje)
         {
             string valor;
             bool loop;
@@ -42,23 +42,19 @@ namespace ConsoleHelper
                
                 Console.WriteLine(mensaje);
                 valor = Console.ReadLine();
-                
-
-                
+                                
                 if (string.IsNullOrEmpty(valor))
                 {
                     throw new NullOrEmptyStringException();
                 }
-                else
+                else 
                 {
-
+                    
+                    return Convert.ToChar(valor);
                 }
-                {
-
-                    return valor;
-                }
+                
             } while (loop);
-        }*/
+        }
 
         public static int InsertInt(string mensaje, int min, int max)
         {
@@ -136,6 +132,16 @@ namespace ConsoleHelper
             } while (loop);
         }
 
+        public static DateTime InsertDate(string mensaje)
+        {
+            int dia = InsertInt("Ingrese día", 1, 31);
+            int mes = InsertInt("Ingrese mes", 1, 12);
+            int año = InsertInt("Ingrese año", 1, 9999);
+
+            DateTime date = new DateTime(año, mes, dia);
+
+            return date;
+        }
 
     }
 }
