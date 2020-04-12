@@ -1,0 +1,5 @@
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\ConsoleHelper\obj\Debug\ConsoleHelper.csprojAssemblyReference.cache
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\ConsoleHelper\bin\Debug\ConsoleHelper.dll
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\ConsoleHelper\bin\Debug\ConsoleHelper.pdb
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\ConsoleHelper\obj\Debug\ConsoleHelper.dll
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\ConsoleHelper\obj\Debug\ConsoleHelper.pdb

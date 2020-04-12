@@ -48,5 +48,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleHelper\ConsoleHelper.csproj">
+      <Project>{0b0fe946-dbe7-4ffd-badb-9b7ad2ecc670}</Project>
+      <Name>ConsoleHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
