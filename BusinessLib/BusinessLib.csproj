@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{153BE48F-0869-4111-BA93-594324128129}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Integrador</RootNamespace>
-    <AssemblyName>Integrador</AssemblyName>
+    <ProjectGuid>{E63EA52D-49B8-4D7F-867C-1D49BFA8F86C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLib</RootNamespace>
+    <AssemblyName>BusinessLib</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,21 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Entidades\Alumno.cs" />
+    <Compile Include="Entidades\Bedel.cs" />
+    <Compile Include="Entidades\Directivo.cs" />
+    <Compile Include="Entidades\Docente.cs" />
+    <Compile Include="Entidades\Abstractas\Empleado.cs" />
+    <Compile Include="Entidades\Facultad.cs" />
+    <Compile Include="Entidades\Abstractas\Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BusinessLib\BusinessLib.csproj">
-      <Project>{e63ea52d-49b8-4d7f-867c-1d49bfa8f86c}</Project>
-      <Name>BusinessLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ConsoleHelper\ConsoleHelper.csproj">
-      <Project>{0b0fe946-dbe7-4ffd-badb-9b7ad2ecc670}</Project>
-      <Name>ConsoleHelper</Name>
-    </ProjectReference>
+    <Compile Include="Entidades\Salario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

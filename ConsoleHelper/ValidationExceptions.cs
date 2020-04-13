@@ -24,20 +24,18 @@ namespace ConsoleHelper
     }
     public class OutOfRangeException : Exception
     {
-        
-        string msj = "El valor ingresado no se encuentra dentro del rango requerido.\nDebe ingresar un valor entre";
 
-        public OutOfRangeException(int min, int max) : base (msj + min + " y " + max)
+        public OutOfRangeException(int min, int max) : base ("El valor ingresado no se encuentra dentro del rango requerido.\nDebe ingresar un valor entre " + min + " y " + max)
         {
             
         }
 
-        public OutOfRangeException(double min, double max) : base(msj + min + " y " + max)
+        public OutOfRangeException(double min, double max) : base("El valor ingresado no se encuentra dentro del rango requerido.\nDebe ingresar un valor entre " + min + " y " + max)
         {
             
         }
 
-        public OutOfRangeException(long min, long max) : base(msj + min + " y " + max)
+        public OutOfRangeException(long min, long max) : base("El valor ingresado no se encuentra dentro del rango requerido.\nDebe ingresar un valor entre " + min + " y " + max)
         {
             
         }

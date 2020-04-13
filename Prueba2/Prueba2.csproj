@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{153BE48F-0869-4111-BA93-594324128129}</ProjectGuid>
+    <ProjectGuid>{E5393DB9-73F4-4973-81BD-FFE8A3D7C5BC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Integrador</RootNamespace>
-    <AssemblyName>Integrador</AssemblyName>
+    <RootNamespace>Prueba2</RootNamespace>
+    <AssemblyName>Prueba2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -47,16 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BusinessLib\BusinessLib.csproj">
-      <Project>{e63ea52d-49b8-4d7f-867c-1d49bfa8f86c}</Project>
-      <Name>BusinessLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ConsoleHelper\ConsoleHelper.csproj">
-      <Project>{0b0fe946-dbe7-4ffd-badb-9b7ad2ecc670}</Project>
-      <Name>ConsoleHelper</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
