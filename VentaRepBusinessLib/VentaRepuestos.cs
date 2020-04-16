@@ -30,23 +30,16 @@ namespace VentaRepBusinessLib
 
         //METODOS
 
+        
+
         public void AgregarRepuesto (Repuesto repuesto)
         {
-            if(this.ListaProductos.SingleOrDefault(x => x.Codigo == repuesto.Codigo) != null)
-            {
-                throw new Exception("El código de repuesto ya existe");
-            }
-            else
-            {
-                this.ListaProductos.Add(repuesto);
-            }
-            
-            
+           this.ListaProductos.Add(repuesto);
         }
 
         public void QuitarRepuesto (int codigoRepuesto)
         {
-            //ver como validar primero si el codigo no exite, que devuelva "el codigo ingresado no existe o ya fue eliminado anteriormente"
+            
             foreach (Repuesto r in ListaProductos)
             {
                 if(r.Codigo == codigoRepuesto)
@@ -58,7 +51,6 @@ namespace VentaRepBusinessLib
 
         public void ModificarPrecio(int codigoRepuesto, double precioNuevo)
         {
-            //validar que exista el repuesto
             foreach (Repuesto r in ListaProductos)
             {
                 if (r.Codigo == codigoRepuesto)
@@ -82,7 +74,7 @@ namespace VentaRepBusinessLib
 
         public void QuitarStock(int codigoRepuesto, int deltaStock)
         {
-            //validar que exista el repuesto
+            
             //validar que el stock no sea menor a cero
             
             foreach (Repuesto r in ListaProductos)
@@ -94,23 +86,47 @@ namespace VentaRepBusinessLib
             }
         }
 
-        //Como hacer para que devuelva lista filtrada, creo una nueva lista publica dentro del método?
+        
         public List<Repuesto> TraerPorCategoria(int codigoCategoria)
         {
+            List<Repuesto> listaFiltradaPorCat = new List<Repuesto>();
             foreach (Repuesto r in ListaProductos)
             {
                 if (r.Categoria.Codigo == codigoCategoria)
                 {
-                    throw new NotImplementedException();
+                    listaFiltradaPorCat.Add(r);
                 }
             }
-
+            return listaFiltradaPorCat;
 
         }
 
+        public bool VerificarCodigoRepuesto(int codigoRepuesto)
+        {
+            
+            foreach (Repuesto r in ListaProductos)
+            {
+                if (r.Codigo == codigoRepuesto)
+                {
+                    return false;
+                }
 
+            }
+            throw new Exception("No existe un producto con este codigo");
+        }
 
+        public bool VerificarCodigoCategoria(int codigoCategoria)
+        {
 
+            foreach (Categoria c in ListaCategorias)
+            {
+                if (c.Codigo == codigoCategoria)
+                {
+                    return false;
+                }
 
+            }
+            throw new Exception("No existe la categoría seleccionada");
+        }
     }
 }

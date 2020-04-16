@@ -35,10 +35,12 @@ namespace VentaRepBusinessLib
 
         //METODOS
 
-        public override string ToString()
+        public virtual string ToString()
         {
             throw new NotImplementedException();
         }
+
+        
     
     
     

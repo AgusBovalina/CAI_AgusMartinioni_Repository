@@ -21,5 +21,9 @@ namespace VentaRepBusinessLib
         public int Codigo { get => codigo; set => codigo = value; }
         public string Nombre { get => nombre; set => nombre = value; }
 
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
