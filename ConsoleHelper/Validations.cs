@@ -8,7 +8,7 @@ namespace ConsoleHelper
 {
     public static class Validations
     {
-        public static string InsertString(string mensaje)
+        public static string StringInsert(string mensaje)
         {
             string valor;
             bool loop; //Ver si este flago esta bien usado
@@ -31,7 +31,7 @@ namespace ConsoleHelper
             } while (loop);
         }
 
-        public static char InsertChar(string mensaje)
+        public static char CharInsert(string mensaje)
         {
             string valor;
             bool loop;
@@ -56,7 +56,7 @@ namespace ConsoleHelper
             } while (loop);
         }
 
-        public static int InsertInt(string mensaje, int min, int max)
+        public static int IntInsert(string mensaje, int min, int max)
         {
            
             bool loop;
@@ -81,7 +81,7 @@ namespace ConsoleHelper
             } while (loop);
 
         }
-        public static double InsertDouble(string mensaje, double min, double max)
+        public static double DoubleInsert(string mensaje, double min, double max)
         {
            
             bool loop;
@@ -107,7 +107,7 @@ namespace ConsoleHelper
 
         }
 
-        public static long InsertLong(string mensaje, long min, long max)
+        public static long LongInsert(string mensaje, long min, long max)
         {
             
             bool loop = true;
@@ -132,11 +132,11 @@ namespace ConsoleHelper
             } while (loop);
         }
 
-        public static DateTime InsertDate(string mensaje)
+        public static DateTime DateInsert(string mensaje)
         {
-            int dia = InsertInt("Ingrese día", 1, 31);
-            int mes = InsertInt("Ingrese mes", 1, 12);
-            int año = InsertInt("Ingrese año", 1, 9999);
+            int dia = IntInsert("Ingrese día", 1, 31);
+            int mes = IntInsert("Ingrese mes", 1, 12);
+            int año = IntInsert("Ingrese año", 1, 9999);
 
             DateTime date = new DateTime(año, mes, dia);
 

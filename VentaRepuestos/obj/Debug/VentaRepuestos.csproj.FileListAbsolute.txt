@@ -1,0 +1,6 @@
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\VentaRepuestos\bin\Debug\VentaRepuestos.exe.config
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\VentaRepuestos\bin\Debug\VentaRepuestos.exe
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\VentaRepuestos\bin\Debug\VentaRepuestos.pdb
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\VentaRepuestos\obj\Debug\VentaRepuestos.csprojAssemblyReference.cache
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\VentaRepuestos\obj\Debug\VentaRepuestos.exe
+C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\VentaRepuestos\obj\Debug\VentaRepuestos.pdb
