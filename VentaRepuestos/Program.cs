@@ -32,6 +32,8 @@ namespace VentaRepuestos1
 
             Console.WriteLine("Bienvenido a " + DonMario.NombreComercio);
 
+            Validations.Duda("Esta bien poner el do while por fuera del try??");
+
             do
             {
                 Console.WriteLine(menu);
@@ -93,6 +95,10 @@ namespace VentaRepuestos1
                     }
 
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
 
 
 
@@ -108,7 +114,7 @@ namespace VentaRepuestos1
            
             foreach (Repuesto r in local.ListaProductos)
             {
-               
+                Console.WriteLine("");
             }
            
         }
@@ -116,16 +122,27 @@ namespace VentaRepuestos1
         {
             bool loop = true;
             do
-            {   int codigoRepuesto = Validations.IntInsert("Ingrese el código del nuevo repuesto", 0, int.MaxValue);
-                loop = !local.VerificarCodigoRepuesto(codigoRepuesto);
+            {   try
+                {
+                    int codigoRepuesto = Validations.IntInsert("Ingrese el código del nuevo repuesto", 0, int.MaxValue);
+                    loop = !local.VerificarCodigoRepuesto(codigoRepuesto);
 
-                string nombreRepuesto = Validations.StringInsert("Ingrese el nombre del nuevo repuesto");
-                double precio = Validations.DoubleInsert("Ingrese el precio del nuevo repuesto", 0, double.MaxValue);
-                int stock = Validations.IntInsert("Ingrese la cantidad de stock del nuevo repuesto", 0, int.MaxValue);
+                    string nombreRepuesto = Validations.StringInsert("Ingrese el nombre del nuevo repuesto");
+                    double precio = Validations.DoubleInsert("Ingrese el precio del nuevo repuesto", 0, double.MaxValue);
+                    int stock = Validations.IntInsert("Ingrese la cantidad de stock del nuevo repuesto", 0, int.MaxValue);
 
-                Repuesto r = new Repuesto(codigoRepuesto, nombreRepuesto, precio, stock);
+                    Repuesto r = new Repuesto(codigoRepuesto, nombreRepuesto, precio, stock);
 
-                local.AgregarRepuesto(r);
+                    local.AgregarRepuesto(r);
+                }
+                catch (StockMenorCeroException)
+                {
+                    loop = true;
+                }
+                catch (PrecioMenorCeroException)
+                {
+                    loop = true;
+                }
             } while (loop);
         }
 
@@ -143,61 +160,133 @@ namespace VentaRepuestos1
 
         private static void ModificarPrecio(VentaRepuestos local)
         {
+            Validations.Duda("Es correcta esta forma de trabajar con el loop y la excepcion?");
             bool loop = true;
             do
             {
-                int codigoRepuesto = Validations.IntInsert("Ingrese el codigo del repuesto al que desea cambiarle el precio", 0, int.MaxValue);
-                loop = local.VerificarCodigoRepuesto(codigoRepuesto);
-                
-                double precioNuevo = Validations.DoubleInsert("Ingrese el nuevo precio", 0, double.MaxValue);
+                try
+                {
+                    int codigoRepuesto = Validations.IntInsert("Ingrese el codigo del repuesto al que desea cambiarle el precio", 0, int.MaxValue);
+                    loop = local.VerificarCodigoRepuesto(codigoRepuesto);
 
-                local.ModificarPrecio(codigoRepuesto, precioNuevo);
-            } while (loop);
+                    double precioNuevo = Validations.DoubleInsert("Ingrese el nuevo precio", 0, double.MaxValue);
+
+                    local.ModificarPrecio(codigoRepuesto, precioNuevo);
+
+                }
+                catch (PrecioMenorCeroException)
+                {
+                    loop = true;
+                }
+                } while (loop);
              }
 
         private static void AgregarStock(VentaRepuestos local)
         {
+            
+            Validations.Duda("Es correcta esta forma de trabajar con el loop y la excepcion?");
             bool loop = true;
+            
             do
             {
-                int codigoRepuesto = Validations.IntInsert("Ingrese el codigo del repuesto al que desea agregarle stock", 0, int.MaxValue);
-                loop = local.VerificarCodigoRepuesto(codigoRepuesto);
-               
-                int deltaStock = Validations.IntInsert("Ingrese el stock a agregar", 0, int.MaxValue);
+                try
+                {
 
-                local.AgregarStock(codigoRepuesto, deltaStock);
+                    int codigoRepuesto = Validations.IntInsert("Ingrese el codigo del repuesto al que desea agregarle stock", 0, int.MaxValue);
+                    int deltaStock = Validations.IntInsert("Ingrese el stock a agregar", 0, int.MaxValue);
 
+                    loop = local.VerificarCodigoRepuesto(codigoRepuesto);
+                    local.AgregarStock(codigoRepuesto, deltaStock);
+                }
+
+                catch (StockMenorCeroException)
+                {
+                    loop = true;
+                }
             } while (loop);
-            }
+        }
 
         private static void QuitarStock(VentaRepuestos local)
         {
+            Validations.Duda("Es correcta esta forma de trabajar con el loop y la excepcion?");
             bool loop = true;
             do
             {
-                int codigoRepuesto = Validations.IntInsert("Ingrese el codigo del repuesto al que desea quitarle stock", 0, int.MaxValue);
-                loop = local.VerificarCodigoRepuesto(codigoRepuesto);
+                try
+                {
+                    int codigoRepuesto = Validations.IntInsert("Ingrese el codigo del repuesto al que desea quitarle stock", 0, int.MaxValue);
+                    loop = local.VerificarCodigoRepuesto(codigoRepuesto);
 
-                int deltaStock = Validations.IntInsert("Ingrese el stock a quitar", 0, int.MaxValue);
+                    int deltaStock = Validations.IntInsert("Ingrese el stock a quitar", 0, int.MaxValue);
 
-                local.QuitarStock(codigoRepuesto, deltaStock);
-
+                    local.QuitarStock(codigoRepuesto, deltaStock);
+                }
+                catch (StockMenorCeroException)
+                {
+                    loop = true;
+                }
             } while (loop);
             }
 
         private static void ListarRepPorCat (VentaRepuestos local)
         {
-            throw new NotImplementedException();
+            bool loop = true;
+            do
+            {
+                try
+                {
+                    int codigoCategoria = Validations.IntInsert("Ingrese el código de la categoría que desea ver", 0, int.MaxValue);
+                    local.VerificarCodigoCategoria(codigoCategoria);
+
+
+                    
+                    foreach (Categoria c in local.ListaCategorias)
+                    {
+                        if (c.Codigo == codigoCategoria)
+                        {
+                            Console.WriteLine("Categoría: " + c.ToString());
+                        }
+                    }
+                    foreach (Repuesto rc in local.TraerPorCategoria(codigoCategoria))
+                    {
+                        Console.WriteLine(rc.ToString());
+                    }
+                }
+                catch (Exception)
+                {
+                    loop = true;
+                }
+
+            } while (loop);
         }
 
         private static void AgregarCategoría(VentaRepuestos local)
         {
-            throw new NotImplementedException();
+            bool loop = true;
+            do
+            {
+                int codigoCategoria= Validations.IntInsert("Ingrese el código de la nueva categoría", 0, int.MaxValue);
+                loop = !local.VerificarCodigoCategoria(codigoCategoria);
+
+                string nombreCategoría = Validations.StringInsert("Ingrese el nombre de la nueva categoría");
+                
+                Categoria c = new Categoria(codigoCategoria, nombreCategoría);
+
+                local.AgregarCategoria(c);
+            } while (loop);
+
         }
 
         private static void QuitarCategoría(VentaRepuestos local)
         {
-            throw new NotImplementedException();
+            bool loop = true;
+            do
+            {
+                int codigoCategoria = Validations.IntInsert("Ingrese el codigo de la categoría a eliminar", 0, int.MaxValue);
+                loop = !local.VerificarCodigoCategoria(codigoCategoria);
+
+                local.QuitarRepuesto(codigoCategoria);
+            } while (loop);
         }
     }
 }

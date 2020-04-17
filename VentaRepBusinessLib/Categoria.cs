@@ -23,7 +23,7 @@ namespace VentaRepBusinessLib
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return string.Format("Nombre: {0} - Código: {1}\n", Nombre, Codigo);
         }
     }
 }

@@ -28,16 +28,46 @@ namespace VentaRepBusinessLib
 
         public int Codigo { get => codigo; set => codigo = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public double Precio { get => precio; set => precio = value; }
-        public int Stock { get => stock; set => stock = value; }
+        public double Precio
+        {
+            get => precio;
+            set
+            {
+                if (value >= 0)
+                {
+                    precio = value;
+                }
+                else
+                {
+                    throw new PrecioMenorCeroException();
+                }
+
+            }
+        }
+        public int Stock 
+        {
+            get => codigo;
+            set 
+            {
+                if (value >= 0)
+                {
+                    stock = value;
+                }
+                else
+                {
+                    throw new StockMenorCeroException();
+                }
+            }
+        }
         public Categoria Categoria { get => categoria; set => categoria = value; }
     
 
         //METODOS
 
-        public virtual string ToString()
+        public override string ToString()
         {
-            throw new NotImplementedException();
+           return string.Format("Nombre: {0} - Código: {1}\n" +
+                            "Cantidad en stock: {2} - Precio: {3:C2}\n", Nombre, Codigo, Stock, Precio);
         }
 
         

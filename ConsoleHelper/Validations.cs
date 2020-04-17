@@ -143,5 +143,10 @@ namespace ConsoleHelper
             return date;
         }
 
+        public static void Duda(string desarrolloDuda)
+        {
+            
+        }
+
     }
 }

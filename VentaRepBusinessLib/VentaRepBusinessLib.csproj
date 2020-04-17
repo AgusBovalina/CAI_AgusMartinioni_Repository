@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Categoria.cs" />
     <Compile Include="Repuesto.cs" />
+    <Compile Include="VentaRepBusinessLibExcep.cs" />
     <Compile Include="VentaRepuestos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

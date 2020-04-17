@@ -23,6 +23,7 @@ namespace VentaRepBusinessLib
         public List<Repuesto> ListaProductos { get => listaProductos; set => listaProductos = value; }
 
         public List<Categoria> ListaCategorias { get => listaCategorias; set => listaCategorias = value; }
+
         public string NombreComercio { get => nombreComercio; set => nombreComercio = value; }
 
         public string Direccion { get => direccion; set => direccion = value; }
@@ -62,7 +63,7 @@ namespace VentaRepBusinessLib
 
         public void AgregarStock(int codigoRepuesto, int deltaStock)
         {
-            //validar que exista el repuesto
+            
             foreach (Repuesto r in ListaProductos)
             {
                 if (r.Codigo == codigoRepuesto)
@@ -75,7 +76,7 @@ namespace VentaRepBusinessLib
         public void QuitarStock(int codigoRepuesto, int deltaStock)
         {
             
-            //validar que el stock no sea menor a cero
+            
             
             foreach (Repuesto r in ListaProductos)
             {
@@ -99,6 +100,23 @@ namespace VentaRepBusinessLib
             }
             return listaFiltradaPorCat;
 
+        }
+
+        public void AgregarCategoria(Categoria categoria)
+        {
+            this.ListaCategorias.Add(categoria);
+        }
+
+        public void QuitarCategoria(int codigoCategoria)
+        {
+
+            foreach (Categoria c in ListaCategorias)
+            {
+                if (c.Codigo == codigoCategoria)
+                {
+                    ListaCategorias.Remove(c);
+                }
+            }
         }
 
         public bool VerificarCodigoRepuesto(int codigoRepuesto)
