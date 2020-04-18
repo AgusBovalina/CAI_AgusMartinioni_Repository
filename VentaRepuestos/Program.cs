@@ -114,9 +114,19 @@ namespace VentaRepuestos1
            
             foreach (Repuesto r in local.ListaProductos)
             {
-                Console.WriteLine("");
+                Console.WriteLine(r.ToString());
             }
            
+        }
+
+        private static void ListarCategorias(VentaRepuestos local)
+        {
+
+            foreach (Categoria c in local.ListaCategorias)
+            {
+                Console.WriteLine(c.ToString());
+            }
+
         }
         private static void AgregarRepuesto(VentaRepuestos local)
         {
@@ -125,15 +135,40 @@ namespace VentaRepuestos1
             {   try
                 {
                     int codigoRepuesto = Validations.IntInsert("Ingrese el código del nuevo repuesto", 0, int.MaxValue);
+                    //esto debería estar 
                     loop = !local.VerificarCodigoRepuesto(codigoRepuesto);
 
                     string nombreRepuesto = Validations.StringInsert("Ingrese el nombre del nuevo repuesto");
                     double precio = Validations.DoubleInsert("Ingrese el precio del nuevo repuesto", 0, double.MaxValue);
                     int stock = Validations.IntInsert("Ingrese la cantidad de stock del nuevo repuesto", 0, int.MaxValue);
 
-                    Repuesto r = new Repuesto(codigoRepuesto, nombreRepuesto, precio, stock);
+                    Console.WriteLine("Las categorías disponibles son:\n" );
+                    ListarCategorias(local);
+                    string op = Validations.StringInsert("Ingrese 1 para agregar una nueva categoría, 2 para asignar una categoría existente");
+                    
+                    if (op == "1")
+                    {
+                        Program.AgregarCategoría(local);
+                    }
 
-                    local.AgregarRepuesto(r);
+                    Categoria cat;
+                    int codigoCat = Validations.IntInsert("Ingrese el código de la categoría elegida",0,int.MaxValue);
+
+                    foreach (Categoria c in local.ListaCategorias)
+                    {
+                        if (c.Codigo == codigoCat)
+                        {
+                            cat = c;
+                            
+                            Repuesto r = new Repuesto(codigoRepuesto, nombreRepuesto, precio, stock, cat);
+                            local.AgregarRepuesto(r);
+                        }
+                    }
+                    
+
+
+                    Validations.Duda("Que pasa si no encuentro el codigo??");
+
                 }
                 catch (StockMenorCeroException)
                 {

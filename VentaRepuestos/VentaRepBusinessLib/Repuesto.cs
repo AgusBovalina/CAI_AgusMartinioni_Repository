@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleHelper;
 
 namespace VentaRepBusinessLib
 {
@@ -14,16 +15,13 @@ namespace VentaRepBusinessLib
         private int stock;
         private Categoria categoria;
 
-        public Repuesto(int codigo, string nombre, double precio, int stock)
+        public Repuesto(int codigo, string nombre, double precio, int stock, Categoria cat)
         {
             this.Codigo = codigo;
             this.Nombre = nombre;
             this.Precio = precio;
             this.Stock = stock;
-
-            //this.categoria = objeto puntual, teniendo que haber recorrido la lista de categorias
-            //Inicia una nueva categoria cada vez que se agrega un repuesto??
-            //this.categoria = new Categoria(codigoCat, nombreCat);pasar objeto de categoria ya armado 
+            this.categoria = cat;
         }
 
         public int Codigo { get => codigo; set => codigo = value; }

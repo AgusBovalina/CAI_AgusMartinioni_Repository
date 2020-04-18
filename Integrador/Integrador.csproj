@@ -49,10 +49,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLib\BusinessLib.csproj">
-      <Project>{e63ea52d-49b8-4d7f-867c-1d49bfa8f86c}</Project>
-      <Name>BusinessLib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ConsoleHelper\ConsoleHelper.csproj">
       <Project>{0b0fe946-dbe7-4ffd-badb-9b7ad2ecc670}</Project>
       <Name>ConsoleHelper</Name>

@@ -1,6 +1,0 @@
-C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Prueba2\bin\Debug\Prueba2.exe.config
-C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Prueba2\bin\Debug\Prueba2.exe
-C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Prueba2\bin\Debug\Prueba2.pdb
-C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Prueba2\obj\Debug\Prueba2.csprojAssemblyReference.cache
-C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Prueba2\obj\Debug\Prueba2.exe
-C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Prueba2\obj\Debug\Prueba2.pdb

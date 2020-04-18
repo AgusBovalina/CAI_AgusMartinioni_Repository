@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrador", "Integrador.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHelper", "..\ConsoleHelper\ConsoleHelper.csproj", "{0B0FE946-DBE7-4FFD-BADB-9B7AD2ECC670}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLib", "..\BusinessLib\BusinessLib.csproj", "{E63EA52D-49B8-4D7F-867C-1D49BFA8F86C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLib", "BusinessLib\BusinessLib.csproj", "{E63EA52D-49B8-4D7F-867C-1D49BFA8F86C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

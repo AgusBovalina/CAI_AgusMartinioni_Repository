@@ -53,7 +53,7 @@
       <Project>{0b0fe946-dbe7-4ffd-badb-9b7ad2ecc670}</Project>
       <Name>ConsoleHelper</Name>
     </ProjectReference>
-    <ProjectReference Include="..\VentaRepBusinessLib\VentaRepBusinessLib.csproj">
+    <ProjectReference Include="VentaRepBusinessLib\VentaRepBusinessLib.csproj">
       <Project>{ebbc5b8d-97cc-41f2-9733-c4b18e105df3}</Project>
       <Name>VentaRepBusinessLib</Name>
     </ProjectReference>
