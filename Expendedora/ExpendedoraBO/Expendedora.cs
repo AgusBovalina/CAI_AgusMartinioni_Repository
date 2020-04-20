@@ -11,34 +11,38 @@ namespace ExpendedoraBO
     {
         private List<Lata> latas;
         private string proveedor;
-        private int capacidad;
+        private int capacidadMax;
         private double dinero;
         private bool encendida;
+        private const int cantCapacidad = 100;
+        
 
         public Expendedora(string proveedor, int capacidad, double dinero)
         {
             this.Latas = new List<Lata>();
             this.Proveedor = proveedor;
-            this.Capacidad = capacidad;
+            this.CapacidadMax = capacidad;
             this.Dinero += dinero;
             this.Encendida = false;
 
         }
+        
 
         public List<Lata> Latas { get => latas; set => latas = value; }
+       
         public string Proveedor { get => proveedor; private set => proveedor = value; }
-        public int Capacidad
+        public int CapacidadMax
         {
-            get => capacidad;
-            private set
+            get => capacidadMax;
+            private set 
             {
-                if (value >= 0)
+                if (capacidadMax >= 0)
                 {
-                    capacidad = value;
+                    capacidadMax = value;
                 }
                 else
                 {
-                    throw new Exception("El precio debe ser mayor a cero");
+                    throw new Exception("La capacidad no puede ser menor a cero");
                 }
 
             }
@@ -51,26 +55,42 @@ namespace ExpendedoraBO
 
         public void AgregarLata(Lata lata)
         {
-            this.GetLataSeleccionada(lata.Codigo);
-
-            if (this.GetLataSeleccionada(lata.Codigo) == null)
+            
+            if(Lata.GetCodigoCorrecto(lata.Codigo) != "" && this.GetLataSeleccionada(lata.Codigo) == null)
             {
+                
                 latas.Add(lata);
-            }
-            else
+                
+                
+            } else if (Lata.GetCodigoCorrecto(lata.Codigo) != "")
             {
-                throw new Exception("El producto ingresado ya existe.");
+                throw new CodigoInvalidoException();
+
+            } else if (this.GetLataSeleccionada(lata.Codigo) != null)
+            {
+                throw new Exception("El producto ingresado ya existe");
             }
+           
             
         }
 
         public Lata ExtraerLata(string codigo, double pago)
         {
             Lata l = this.GetLataSeleccionada(codigo);
-            Dinero += l.Precio;
-            Capacidad--;
 
-            Validations.Duda("Para que necesito el precio si ya tengo la lata seleccionada");
+            if (l.Precio <= pago)
+            {
+                Dinero += l.Precio;
+                latas.Remove(l);
+            } else
+            {
+                l = null;
+            }
+             
+            if(l == null)
+            {
+                throw new DineroInsuficienteException(); 
+            }
             return l;
             
         }
@@ -82,8 +102,14 @@ namespace ExpendedoraBO
 
         public int GetCapacidadRestante()
         {
-            Validations.Comentario("Capacidad total, sin diferenciar sabores");
-            return Latas.Count();
+            int capacidadRestante = CapacidadMax - latas.Count;
+            if (capacidadRestante >= 0)
+            {
+                return capacidadRestante;
+            } else
+            {
+                return -1;
+            }
         }
 
         public void EncenderMaquina()
@@ -97,12 +123,20 @@ namespace ExpendedoraBO
         public bool EstaVacia()
         {
             bool vacia = false;
-            if (Capacidad == 0)
+            if (GetCapacidadRestante() < 0)
             {
-                return vacia = true;
+                vacia = true;
+            }
+            
+
+            Validations.Duda("La excepción la tiene que devolver el método??. Entiendo que como devuelve int, no debería devolver la excepción pero como se hace sino");
+            if (vacia)
+            {
+                throw new CapacidadInsuficienteException();
             }
             return vacia;
         }
+
 
         public Lata GetLataSeleccionada(string codigoLata)
         {
@@ -118,5 +152,7 @@ namespace ExpendedoraBO
 
             return lataSeleccionada;
         }
+
+        
     }
 }
