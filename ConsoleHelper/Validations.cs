@@ -148,5 +148,9 @@ namespace ConsoleHelper
             
         }
 
+        public static void Comentario(string comentario)
+        {
+
+        }
     }
 }
