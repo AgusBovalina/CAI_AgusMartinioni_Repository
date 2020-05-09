@@ -147,18 +147,17 @@ namespace ExpendedoraBO
 
         public double GetPrecioPorLitro()
         {
-            
-            Validations.Duda("Tiene que tener un codigo de lata de input por lo menos. Ver tostring tb");
             const int litro = 1000;
 
             // volumen ----- precio
             // litro   ----- x
 
-            return ((Precio * litro) / Volumen);
+            return ((precio * litro) / volumen);
         }
 
         public override string ToString()
         {
+            
             return string.Format("{0} - {1} - $ {2} / $/L {3}", Nombre, Sabor, Precio, GetPrecioPorLitro());
 
         }

@@ -129,11 +129,11 @@ namespace EjExpendedora
 
         static bool EstaEncendida(Expendedora expendedora)
         {
-            bool encendida;
+            
             expendedora.EncenderMaquina();
             Console.WriteLine("Encendido");
 
-            return encendida = true;
+            return true;
             
         }
         
@@ -182,7 +182,7 @@ namespace EjExpendedora
                 }
                 else if (expendedora.EstaVacia())
                 {
-                    Validations.Duda("Esto es correcto en program?");
+                    
                     throw new CapacidadInsuficienteException();
 
                 }

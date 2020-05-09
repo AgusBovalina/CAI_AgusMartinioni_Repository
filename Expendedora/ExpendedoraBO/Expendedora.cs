@@ -126,15 +126,9 @@ namespace ExpendedoraBO
             if (GetCapacidadRestante() < 0)
             {
                 vacia = true;
-            }
-            
-
-            Validations.Duda("La excepción la tiene que devolver el método??. Entiendo que como devuelve int, no debería devolver la excepción pero como se hace sino");
-            if (vacia)
-            {
-                throw new CapacidadInsuficienteException();
-            }
-            return vacia;
+            } 
+              
+            return vacia;           
         }
 
 
