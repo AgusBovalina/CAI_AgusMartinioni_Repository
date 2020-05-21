@@ -38,18 +38,13 @@ namespace ExpendedoraBO
             this.Volumen = volumen;
         }
 
-        public Lata(string codigo)
-        {
-            this.Codigo = codigo;
-            
-        }
 
         public string Codigo 
         { 
             get => codigo;
             private set
             {
-                Validations.Comentario("Un if que valide que los codigos no sea distintos a las const?");
+                // 1. Un if que valide que los codigos no sea distintos a las const?;
                 codigo = value.ToUpper();
             } 
         }
@@ -162,47 +157,31 @@ namespace ExpendedoraBO
 
         }
 
-        
 
-        public static List<Lata> ListaCodigos()
-        {
-            List<Lata> listaCodigos = new List<Lata>();
-            Lata co1l = new Lata(co1);
-            Lata co2l = new Lata(co2);
-            Lata sp1l = new Lata(ll1);
-            Lata sp2l = new Lata(ll2);
-            Lata fa1l = new Lata(na1);
-            Lata fa2l = new Lata(na2);
-            listaCodigos.Add(co1l);
-            listaCodigos.Add(co2l);
-            listaCodigos.Add(sp1l);
-            listaCodigos.Add(sp2l);
-            listaCodigos.Add(fa1l);
-            listaCodigos.Add(fa2l);
-            return listaCodigos;
-        }
 
+        //ver. Debería trabajar con listaVariedad
         public static string ListarCodigos()
         {
-            List<Lata> lista = Lata.ListaCodigos();
-            string list = ""; ;
-            foreach (Lata l in lista)
+            
+            string list = "";
+            foreach (Variedad v in ListaVariedad())
             {
-                list += string.Format("+ {0} - {1} {2}\n", l.Codigo, l.Nombre, l.Sabor);
+                list += string.Format("+ {0} - {1} {2}\n", v.Codigo, v.Nombre, v.Sabor);
             }
             return list;
             
         }
 
+        //ver Este metodo debería ir en latahelper?
         public static string GetCodigoCorrecto(string codigoLata)
         {
             string lataCodigoSeleccionado = "";
 
-            foreach (Lata l in ListaCodigos())
+            foreach (Variedad v in ListaVariedad())
             {
-                if (codigoLata == l.Codigo)
+                if (codigoLata == v.Codigo)
                 {
-                    return lataCodigoSeleccionado = l.Codigo;
+                    return lataCodigoSeleccionado = v.Codigo;
                 }
             }
 

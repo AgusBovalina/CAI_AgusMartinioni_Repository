@@ -143,14 +143,7 @@ namespace ConsoleHelper
             return date;
         }
 
-        public static void Duda(string duda)
-        {
-            
-        }
-
-        public static void Comentario(string comentario)
-        {
-
-        }
+       
+        
     }
 }

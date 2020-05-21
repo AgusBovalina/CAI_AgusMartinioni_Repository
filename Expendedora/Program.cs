@@ -45,59 +45,19 @@ namespace EjExpendedora
                             break;
 
                         case "2":
-                            if (Program.EstaEncendida(exp1))
-                            {
-                                Lata.ListarCodigos();
-                                Program.IngresarLata(exp1);
-                            }
-                            else
-                            {
-                                Console.WriteLine("La máquina expendedora se encuentra apagada. Encender");
-                            }
+                            Program.IngresarLata(exp1);
                             break;
 
                         case "3":
-                            if (Program.EstaEncendida(exp1) && !exp1.EstaVacia())
-                            {
-                                Lata.ListarCodigos();
-                                Program.ExtraerLata(exp1);
-                            }
-                            else if (exp1.EstaVacia())
-                            {
-                                throw new CapacidadInsuficienteException();
-                            }
-                            else
-                            {
-                                Console.WriteLine("La máquina expendedora se encuentra apagada. Encender");
-                            }
-                            
+                            Program.ExtraerLata(exp1);
                             break;
 
                         case "4":
-                            if (Program.EstaEncendida(exp1))
-                            {
-                                Program.ObtenerBalance(exp1);
-                            }
-                            else
-                            {
-                                Console.WriteLine("La máquina expendedora se encuentra apagada. Encender");
-                            }
+                            Program.ObtenerBalance(exp1);
                             break;
 
                         case "5":
-                            if (Program.EstaEncendida(exp1) && !exp1.EstaVacia())
-                            {
-                                
-                                Program.MostrarStock(exp1);
-                            }
-                            else if (exp1.EstaVacia())
-                            {
-                                throw new CapacidadInsuficienteException();
-                            }
-                            else
-                            {
-                                Console.WriteLine("La máquina expendedora se encuentra apagada. Encender");
-                            }
+                            Program.MostrarStock(exp1);
                             break;
 
                         case "6":
@@ -139,84 +99,121 @@ namespace EjExpendedora
         
         static void IngresarLata (Expendedora expendedora)
         {
-            try
+
+
+            if (Program.EstaEncendida(expendedora))
             {
-                
-                string codigo = Validations.StringInsert("Ingrese el codigo del producto").ToUpper();
-                if (Lata.GetCodigoCorrecto(codigo) != "")
+                Lata.ListarCodigos();
+                Program.IngresarLata(expendedora);
+            
+                try
                 {
-                   
+                
+                    string codigo = Validations.StringInsert("Ingrese el codigo del producto").ToUpper();
                     double precio = Validations.DoubleInsert("Ingrese el precio del producto", 0, 10000);
                     double volumen = Validations.DoubleInsert("Ingrese el volumen del producto", 0, 10000);
                     Lata lata = new Lata(codigo, precio, volumen);
                     expendedora.AgregarLata(lata);
+              
                 }
-                else
+                catch (CodigoInvalidoException e)
                 {
-                    Console.WriteLine("El producto ingresado no existe");
+                    Console.WriteLine(e.Message + "Ingrese el producto nuevamente.");
                     Program.IngresarLata(expendedora);
                 }
+                catch (CapacidadInsuficienteException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
-            catch (CodigoInvalidoException e)
+            else
             {
-                Console.WriteLine(e.Message + "Ingrese el producto nuevamente.");
-                Program.IngresarLata(expendedora);
+                Console.WriteLine("La máquina expendedora se encuentra apagada. Encender");
             }
-            catch (CapacidadInsuficienteException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            
+
         }
         static void ExtraerLata(Expendedora expendedora)
         {
-            try
+            if (Program.EstaEncendida(expendedora) && !expendedora.EstaVacia())
             {
-
-
-                string codigo = Validations.StringInsert("Ingrese el codigo del producto");
-                if (Lata.GetCodigoCorrecto(codigo) != "" && expendedora.GetLataSeleccionada(codigo) != null)
+                Lata.ListarCodigos();
+                try
                 {
-                    double pago = Validations.DoubleInsert("Ingrese el dinero", 0, double.MaxValue);
-                    expendedora.ExtraerLata(codigo, pago);
-                }
-                else if (expendedora.EstaVacia())
-                {
-                    
-                    throw new CapacidadInsuficienteException();
+
+
+                    string codigo = Validations.StringInsert("Ingrese el codigo del producto");
+                    if (Lata.GetCodigoCorrecto(codigo) != "" && expendedora.GetLataSeleccionada(codigo) != null)
+                    {
+                        double pago = Validations.DoubleInsert("Ingrese el dinero", 0, double.MaxValue);
+                        expendedora.ExtraerLata(codigo, pago);
+                    }
+                    else if (expendedora.EstaVacia())
+                    {
+
+                        throw new CapacidadInsuficienteException();
+
+                    }
 
                 }
+                catch (CodigoInvalidoException e)
+                {
+                    Console.WriteLine(e.Message + "Ingrese el codigo del producto nuevamente.");
+                    Program.ExtraerLata(expendedora);
+                }
+                catch (DineroInsuficienteException e)
+                {
+                    Console.WriteLine(e.Message + "Comience nuevamente");
+                    //Program.ExtraerLata(expendedora); Por si no posee el dinero.
+                }
+                catch (SinStockException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+            else if (expendedora.EstaVacia())
+            {
+                throw new CapacidadInsuficienteException();
+            }
+            else
+            {
+                Console.WriteLine("La máquina expendedora se encuentra apagada. Encender");
+            }
             
-        }
-            catch (CodigoInvalidoException e)
-            {
-                Console.WriteLine(e.Message + "Ingrese el codigo del producto nuevamente.");
-                Program.ExtraerLata(expendedora);
-            }
-            catch (DineroInsuficienteException e)
-            {
-                Console.WriteLine(e.Message + "Comience nuevamente");
-                //Program.ExtraerLata(expendedora); Por si no posee el dinero.
-            }
-            catch(SinStockException e)
-            {
-                Console.WriteLine(e.Message);
-            }
 
         }
         static void ObtenerBalance(Expendedora expendedora)
         {
-            //expendedora.EncenderMaquina();
-            Console.WriteLine(string.Format("El dinero disponible en la expendedora {0} es $ {1}. Hay {2} latas disponibles en stock", expendedora, expendedora.GetBalance(), expendedora.Latas.Count));
+            
+            if (Program.EstaEncendida(expendedora))
+            {
+                Console.WriteLine(string.Format("El dinero disponible en la expendedora {0} es $ {1}. Hay {2} latas disponibles en stock", expendedora, expendedora.GetBalance(), expendedora.Latas.Count));
+            }
+            else
+            {
+                Console.WriteLine("La máquina expendedora se encuentra apagada. Encender");
+            }
         }
         static void MostrarStock(Expendedora expendedora)
         {
-            
-            Console.WriteLine(string.Format("El stock disponible en la expendedora {0} es {1}.", expendedora, expendedora.GetCapacidadRestante()));
-            foreach (Lata l in expendedora.Latas)
+            if (Program.EstaEncendida(expendedora) && !expendedora.EstaVacia())
             {
-                Console.WriteLine(l.ToString());
+
+                Console.WriteLine(string.Format("El stock disponible en la expendedora {0} es {1}.", expendedora, expendedora.GetCapacidadRestante()));
+                foreach (Lata l in expendedora.Latas)
+                {
+                    Console.WriteLine(l.ToString());
+                }
             }
+            else if (expendedora.EstaVacia())
+            {
+                throw new CapacidadInsuficienteException();
+            }
+            else
+            {
+                Console.WriteLine("La máquina expendedora se encuentra apagada. Encender");
+            }
+            
+            
         }
 
 
