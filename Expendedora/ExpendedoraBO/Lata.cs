@@ -114,34 +114,7 @@ namespace ExpendedoraBO
 
 
 
-        //ver. Por qué el error dice que no existe en este contexto si es de esta clase ListaVariedad?
-        public static string ListarCodigos()
-        {
-            
-            string list = "";
-            foreach (Variedad v in ListaVariedad())
-            {
-                list += string.Format("+ {0} - {1} {2}\n", v.Codigo, v.Nombre, v.Sabor);
-            }
-            return list;
-            
-        }
-
-        //ver Este metodo debería ir en latahelper?
-        public static string GetCodigoCorrecto(string codigoLata)
-        {
-            string lataCodigoSeleccionado = "";
-
-            foreach (Variedad v in ListaVariedad())
-            {
-                if (codigoLata == v.Codigo)
-                {
-                    return lataCodigoSeleccionado = v.Codigo;
-                }
-            }
-
-            return lataCodigoSeleccionado;
-        }
+        
 
 
     }

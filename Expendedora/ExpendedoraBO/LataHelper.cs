@@ -9,31 +9,36 @@ namespace ExpendedoraBO
 {
     public class LataHelper
     {
-        private List<Variedad> listaVariedad = new List<Variedad>();
+        private static List<Variedad> listaVariedad;
 
-        Variedad co1 = new Variedad("CO1", "Cola", "Regular");
-        Variedad co2 = new Variedad("CO2", "Cola", "Light");
-        Variedad ll1 = new Variedad("LL1", "Lima limón", "Regular");
-        Variedad ll2 = new Variedad("LL2", "Lima Limón", "Light");
-        Variedad fa1 = new Variedad("FA1", "Fanta", "Regular");
-        Variedad fa2 = new Variedad("FA2", "Fanta", "Light");
+        public static List<Variedad> ListaVariedad { get => listaVariedad; set => listaVariedad = value; }
 
-        public List<Variedad> ListaVariedad { get => listaVariedad; private set => listaVariedad = value; }
+        static Variedad co1 = new Variedad("CO1", "Cola", "Regular");
+        static Variedad co2 = new Variedad("CO2", "Cola", "Light");
+        static Variedad ll1 = new Variedad("LL1", "Lima limón", "Regular");
+        static Variedad ll2 = new Variedad("LL2", "Lima Limón", "Light");
+        static Variedad fa1 = new Variedad("FA1", "Fanta", "Regular");
+        static Variedad fa2 = new Variedad("FA2", "Fanta", "Light");
 
-        
-        ListaVariedad.Add(co1);
-        ListaVariedad.Add(co2);
-        ListaVariedad.Add(ll1);
-        ListaVariedad.Add(ll2);
-        ListaVariedad.Add(fa1);
-        ListaVariedad.Add(fa2);
-               
+        private static List<Variedad> AgregarList()
+        {
+            listaVariedad = new List<Variedad>();
+            ListaVariedad.Add(co1);
+            ListaVariedad.Add(co2);
+            ListaVariedad.Add(ll1);
+            ListaVariedad.Add(ll2);
+            ListaVariedad.Add(fa1);
+            ListaVariedad.Add(fa2);
 
-       
+            return ListaVariedad;
+
+
+        }
+
+            
 
         public static Variedad GetVariedad(string codigo)
         {
-                        
             foreach (Variedad v in ListaVariedad)
             {
                 if (v.Codigo == codigo)
@@ -44,6 +49,35 @@ namespace ExpendedoraBO
                 
             }
             return null;
+        }
+
+        //ver. 
+        public static string ListarCodigos()
+        {
+            AgregarList();
+            string list = "";
+            foreach (Variedad v in ListaVariedad)
+            {
+                list += v.ToString();
+            }
+            return list;
+
+        }
+
+        
+        public static string GetCodigoCorrecto(string codigoLata)
+        {
+            string lataCodigoSeleccionado = "";
+
+            foreach (Variedad v in ListaVariedad)
+            {
+                if (codigoLata == v.Codigo)
+                {
+                    return lataCodigoSeleccionado = v.Codigo;
+                }
+            }
+
+            return lataCodigoSeleccionado;
         }
     }
 }

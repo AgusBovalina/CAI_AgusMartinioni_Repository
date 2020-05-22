@@ -41,7 +41,7 @@ namespace EjExpendedora
                             Program.EstaEncendida(exp1);
                             break;
                         case "1":
-                            Lata.ListarCodigos();
+                            Program.ListarCodigos();
                             break;
 
                         case "2":
@@ -96,14 +96,16 @@ namespace EjExpendedora
             return true;
             
         }
-        
+
+        static string ListarCodigos
+
         static void IngresarLata (Expendedora expendedora)
         {
 
 
             if (Program.EstaEncendida(expendedora))
             {
-                Lata.ListarCodigos();
+                Console.WriteLine( LataHelper.ListarCodigos());
                 Program.IngresarLata(expendedora);
             
                 try
@@ -136,11 +138,11 @@ namespace EjExpendedora
         {
             if (Program.EstaEncendida(expendedora) && !expendedora.EstaVacia())
             {
-                Lata.ListarCodigos();
+                LataHelper.ListarCodigos();
                 try
                 {
                     string codigo = Validations.StringInsert("Ingrese el codigo del producto");
-                    if (Lata.GetCodigoCorrecto(codigo) != "" && expendedora.GetLataSeleccionada(codigo) != null)
+                    if (LataHelper.GetCodigoCorrecto(codigo) != "" && expendedora.GetLataSeleccionada(codigo) != null)
                     {
                         double pago = Validations.DoubleInsert("Ingrese el dinero", 0, double.MaxValue);
                         Console.WriteLine(expendedora.ExtraerLata(codigo, pago).ToString());                        

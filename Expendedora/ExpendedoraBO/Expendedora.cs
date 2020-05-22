@@ -40,11 +40,11 @@ namespace ExpendedoraBO
             get => capacidadMax;
             private set 
             {
-                if (capacidadMax >= 0)
+                if (capacidadMax >= 0 && capacidadMax <= cantCapacidad )
                 {
                     capacidadMax = value;
                 }
-                else
+                else if (capacidadMax <= cantCapacidad)
                 {
                     throw new Exception("La capacidad no puede ser menor a cero");
                 }
@@ -61,13 +61,13 @@ namespace ExpendedoraBO
         public void AgregarLata(Lata lata)
         {
             
-            if(Lata.GetCodigoCorrecto(lata.Codigo) != "" && this.GetLataSeleccionada(lata.Codigo) == null)
+            if(LataHelper.GetCodigoCorrecto(lata.Codigo) != "" && this.GetLataSeleccionada(lata.Codigo) == null)
             {
                 
                 latas.Add(lata);
                 
                 
-            } else if (Lata.GetCodigoCorrecto(lata.Codigo) != "")
+            } else if (LataHelper.GetCodigoCorrecto(lata.Codigo) != "")
             {
                 throw new CodigoInvalidoException();
 
