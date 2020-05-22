@@ -10,6 +10,7 @@ namespace ExpendedoraBO
     public class Expendedora
     {
         private List<Lata> latas;
+        private List<Venta> ventas;
         private string proveedor;
         private int capacidadMax;
         private double dinero;
@@ -20,6 +21,7 @@ namespace ExpendedoraBO
         public Expendedora(string proveedor, int capacidad, double dinero)
         {
             this.Latas = new List<Lata>();
+            this.Ventas = new List<Venta>();
             this.Proveedor = proveedor;
             this.CapacidadMax = capacidad;
             this.Dinero += dinero;
@@ -29,7 +31,9 @@ namespace ExpendedoraBO
         
 
         public List<Lata> Latas { get => latas; set => latas = value; }
-       
+
+        public List<Venta> Ventas { get => ventas; set => ventas = value; }
+
         public string Proveedor { get => proveedor; private set => proveedor = value; }
         public int CapacidadMax
         {
@@ -51,6 +55,7 @@ namespace ExpendedoraBO
         public double Dinero { get => dinero; set => dinero = value; }
         public bool Encendida { get => encendida; private set => encendida = value; }
         
+
         //MÉTODOS
 
         public void AgregarLata(Lata lata)
@@ -74,9 +79,10 @@ namespace ExpendedoraBO
             
         }
 
-        public Lata ExtraerLata(string codigo, double pago)
+        public Venta ExtraerLata(string codigo, double pago)
         {
             Lata l = this.GetLataSeleccionada(codigo);
+                  
 
             if (l.Precio <= pago)
             {
@@ -84,14 +90,17 @@ namespace ExpendedoraBO
                 latas.Remove(l);
             } else
             {
-                l = null;
+                throw new DineroInsuficienteException();
             }
-             
+
             if(l == null)
             {
-                throw new DineroInsuficienteException(); 
+                throw new SinStockException();
             }
-            return l;
+
+            Venta nuevaVenta = new Venta(l, CalcVuelto(l.Precio, pago));
+
+            return nuevaVenta;
             
         }
 
@@ -142,11 +151,16 @@ namespace ExpendedoraBO
                 {
                     return lataSeleccionada = l;
                 }
+                
             }
 
             return lataSeleccionada;
         }
 
-        
+        public double CalcVuelto(double precio, double pago)
+        {
+            return pago - precio;
+        }
+
     }
 }

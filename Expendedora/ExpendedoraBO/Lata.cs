@@ -14,7 +14,8 @@ namespace ExpendedoraBO
         private string sabor;
         private double precio;
         private double volumen;
-        private const string co1 = "CO1";
+        /*Eliminar:
+         * private const string co1 = "CO1";
         private const string co2 = "CO2";
         private const string ll1 = "LL1";
         private const string ll2 = "LL2";
@@ -24,18 +25,20 @@ namespace ExpendedoraBO
         private const string sprite = "Lima Limón";
         private const string fanta = "Naranja";
         private const string regular = "Regular";
-        private const string zero = "Light";
-        
+        private const string zero = "Light";*/
         
 
 
-
         
-        public Lata (string codigo,  double precio, double volumen)
+        public Lata (string codigo, double precio, double volumen)
         {
+            Variedad var = LataHelper.GetVariedad(codigo);
             this.Codigo = codigo;
+            this.Nombre = var.Nombre;
+            this.Sabor = var.Sabor;
             this.Precio = precio;
             this.Volumen = volumen;
+            
         }
 
 
@@ -44,66 +47,14 @@ namespace ExpendedoraBO
             get => codigo;
             private set
             {
-                // 1. Un if que valide que los codigos no sea distintos a las const?;
+                
                 codigo = value.ToUpper();
             } 
         }
-        public string Nombre 
-        { 
-            get => nombre;
-            private set
-            {
-                switch (Codigo)
-                {
-                    case co1:
-                        nombre = cocaCola;
-                        break;
-                    case co2:
-                        nombre = cocaCola;
-                        break;
-                    case ll1:
-                        nombre = sprite;
-                        break;
-                    case ll2:
-                        nombre = sprite;
-                        break;
-                    case na1:
-                        nombre = fanta;
-                        break;
-                    case na2:
-                        nombre = fanta;
-                        break;
-                }
-            }
-        }
-        public string Sabor
-        {
-            get => sabor;
-            private set
-            {
-                switch (Codigo)
-                {
-                    case co1:
-                        sabor = regular;
-                        break;
-                    case co2:
-                        sabor = zero;
-                        break;
-                    case ll1:
-                        sabor = regular;
-                        break;
-                    case ll2:
-                        sabor = zero;
-                        break;
-                    case na1:
-                        sabor = regular;
-                        break;
-                    case na2:
-                        sabor = zero;
-                        break;
-                }
-            }
-        }
+
+        public string Nombre { get => nombre; private set => nombre = value; }
+        public string Sabor { get => sabor; private set => sabor = value; }
+
         public double Precio
         {
             get => precio;
@@ -135,9 +86,13 @@ namespace ExpendedoraBO
             }
         }
 
-       
-
         
+
+
+
+
+
+
         //MÉTODOS
 
         public double GetPrecioPorLitro()
@@ -159,7 +114,7 @@ namespace ExpendedoraBO
 
 
 
-        //ver. Debería trabajar con listaVariedad
+        //ver. Por qué el error dice que no existe en este contexto si es de esta clase ListaVariedad?
         public static string ListarCodigos()
         {
             

@@ -139,13 +139,11 @@ namespace EjExpendedora
                 Lata.ListarCodigos();
                 try
                 {
-
-
                     string codigo = Validations.StringInsert("Ingrese el codigo del producto");
                     if (Lata.GetCodigoCorrecto(codigo) != "" && expendedora.GetLataSeleccionada(codigo) != null)
                     {
                         double pago = Validations.DoubleInsert("Ingrese el dinero", 0, double.MaxValue);
-                        expendedora.ExtraerLata(codigo, pago);
+                        Console.WriteLine(expendedora.ExtraerLata(codigo, pago).ToString());                        
                     }
                     else if (expendedora.EstaVacia())
                     {
