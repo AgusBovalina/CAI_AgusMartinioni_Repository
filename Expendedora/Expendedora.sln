@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpendedoraBO", "Expendedor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHelper", "..\ConsoleHelper\ConsoleHelper.csproj", "{0B0FE946-DBE7-4FFD-BADB-9B7AD2ECC670}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpededoraForms", "..\ExpededoraForms\ExpededoraForms.csproj", "{CBE60C1A-B868-4631-AAC5-9C98285B9EDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0B0FE946-DBE7-4FFD-BADB-9B7AD2ECC670}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B0FE946-DBE7-4FFD-BADB-9B7AD2ECC670}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B0FE946-DBE7-4FFD-BADB-9B7AD2ECC670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBE60C1A-B868-4631-AAC5-9C98285B9EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE60C1A-B868-4631-AAC5-9C98285B9EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE60C1A-B868-4631-AAC5-9C98285B9EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE60C1A-B868-4631-AAC5-9C98285B9EDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
