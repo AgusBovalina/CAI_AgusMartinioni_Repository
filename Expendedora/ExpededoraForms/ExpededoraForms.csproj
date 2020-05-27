@@ -45,16 +45,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmExtraerLata.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmExtraerLata.Designer.cs">
+      <DependentUpon>FrmExtraerLata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMostrarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMostrarStock.Designer.cs">
+      <DependentUpon>FrmMostrarStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExpendedora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExpendedora.Designer.cs">
+      <DependentUpon>FrmExpendedora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresarLata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresarLata.Designer.cs">
+      <DependentUpon>FrmIngresarLata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmObtenerBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmObtenerBalance.Designer.cs">
+      <DependentUpon>FrmObtenerBalance.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmExtraerLata.resx">
+      <DependentUpon>FrmExtraerLata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExpendedora.resx">
+      <DependentUpon>FrmExpendedora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngresarLata.resx">
+      <DependentUpon>FrmIngresarLata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMostrarStock.resx">
+      <DependentUpon>FrmMostrarStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmObtenerBalance.resx">
+      <DependentUpon>FrmObtenerBalance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,6 +122,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleExpendedora.csproj">
+      <Project>{fb481345-cb6b-4fab-954a-07c567949fa7}</Project>
+      <Name>ConsoleExpendedora</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExpendedoraBO\ExpendedoraBO.csproj">
+      <Project>{068304c9-ed85-4aac-b471-65790c138653}</Project>
+      <Name>ExpendedoraBO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

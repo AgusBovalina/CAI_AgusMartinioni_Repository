@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ExpendedoraBO;
 
 namespace ExpededoraForms
 {
@@ -16,7 +17,7 @@ namespace ExpededoraForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FrmExpendedora(new Expendedora("Coca-Cola Company", 100, 1000)));
         }
     }
 }

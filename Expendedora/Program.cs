@@ -41,7 +41,7 @@ namespace EjExpendedora
                             Program.EstaEncendida(exp1);
                             break;
                         case "1":
-                            Program.ListarCodigos();
+                            Program.ListarCodigos(exp1);
                             break;
 
                         case "2":
@@ -97,7 +97,11 @@ namespace EjExpendedora
             
         }
 
-        static string ListarCodigos
+        static void ListarCodigos(Expendedora expendedora)
+        {
+
+            Console.WriteLine(LataHelper.ListarCodigos());
+        }
 
         static void IngresarLata (Expendedora expendedora)
         {
@@ -201,6 +205,7 @@ namespace EjExpendedora
                 Console.WriteLine(string.Format("El stock disponible en la expendedora {0} es {1}.", expendedora, expendedora.GetCapacidadRestante()));
                 foreach (Lata l in expendedora.Latas)
                 {
+                    Console.WriteLine(expendedora.GetStock(l));
                     Console.WriteLine(l.ToString());
                 }
             }

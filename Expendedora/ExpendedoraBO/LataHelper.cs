@@ -20,7 +20,7 @@ namespace ExpendedoraBO
         static Variedad fa1 = new Variedad("FA1", "Fanta", "Regular");
         static Variedad fa2 = new Variedad("FA2", "Fanta", "Light");
 
-        private static List<Variedad> AgregarList()
+        public static List<Variedad> AgregarList()
         {
             listaVariedad = new List<Variedad>();
             ListaVariedad.Add(co1);
@@ -54,7 +54,7 @@ namespace ExpendedoraBO
         //ver. 
         public static string ListarCodigos()
         {
-            AgregarList();
+            
             string list = "";
             foreach (Variedad v in ListaVariedad)
             {

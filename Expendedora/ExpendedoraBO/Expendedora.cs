@@ -14,18 +14,23 @@ namespace ExpendedoraBO
         private string proveedor;
         private int capacidadMax;
         private double dinero;
+        private double saldoInicial;
         private bool encendida;
         private const int cantCapacidad = 100;
         
 
         public Expendedora(string proveedor, int capacidad, double dinero)
         {
+            
             this.Latas = new List<Lata>();
             this.Ventas = new List<Venta>();
             this.Proveedor = proveedor;
             this.CapacidadMax = capacidad;
             this.Dinero += dinero;
+            this.SaldoInicial = dinero;
             this.Encendida = false;
+            LataHelper.AgregarList();
+
 
         }
         
@@ -52,7 +57,35 @@ namespace ExpendedoraBO
             }
         }
        
-        public double Dinero { get => dinero; set => dinero = value; }
+        public double Dinero
+        {
+            get => dinero; 
+            set
+            {
+                if (capacidadMax >= 0)
+                {
+                    dinero = value;
+                }
+                else
+                {
+                    throw new Exception("La monto no puede ser menor a cero");
+                }
+            }
+        }
+        public double SaldoInicial { get => saldoInicial; private set
+            {
+                if (capacidadMax >= 0)
+                {
+                    dinero = value;
+                }
+                else
+                {
+                    throw new Exception("La monto no puede ser menor a cero");
+                }
+            }
+        }
+
+        public double Ganancia { get => dinero - saldoInicial; }
         public bool Encendida { get => encendida; private set => encendida = value; }
         
 
@@ -109,6 +142,19 @@ namespace ExpendedoraBO
             return string.Format("Dinero acumulado: {0}", Dinero);
         }
 
+        public int GetStock(Lata lata)
+        {
+            int stock = 0;
+            foreach (Lata l in Latas)
+            {
+                if (lata.Codigo == l.Codigo&& lata.Volumen == l.Volumen && lata.Precio ==l.Precio)
+                {
+                    stock += 1;
+                }
+            }
+
+            return stock;
+        }
         public int GetCapacidadRestante()
         {
             int capacidadRestante = CapacidadMax - latas.Count;

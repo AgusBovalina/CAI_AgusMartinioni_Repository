@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expendedora", "Expendedora.csproj", "{FB481345-CB6B-4FAB-954A-07C567949FA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleExpendedora", "ConsoleExpendedora.csproj", "{FB481345-CB6B-4FAB-954A-07C567949FA7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpendedoraBO", "ExpendedoraBO\ExpendedoraBO.csproj", "{068304C9-ED85-4AAC-B471-65790C138653}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHelper", "..\ConsoleHelper\ConsoleHelper.csproj", "{0B0FE946-DBE7-4FFD-BADB-9B7AD2ECC670}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpededoraForms", "..\ExpededoraForms\ExpededoraForms.csproj", "{CBE60C1A-B868-4631-AAC5-9C98285B9EDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpededoraForms", "ExpededoraForms\ExpededoraForms.csproj", "{CBE60C1A-B868-4631-AAC5-9C98285B9EDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
