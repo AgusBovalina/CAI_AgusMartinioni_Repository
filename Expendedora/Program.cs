@@ -100,7 +100,7 @@ namespace EjExpendedora
         static void ListarCodigos(Expendedora expendedora)
         {
 
-            Console.WriteLine(LataHelper.ListarCodigos());
+            Console.WriteLine(LataHelper.ListarVariedades());
         }
 
         static void IngresarLata (Expendedora expendedora)
@@ -109,7 +109,7 @@ namespace EjExpendedora
 
             if (Program.EstaEncendida(expendedora))
             {
-                Console.WriteLine( LataHelper.ListarCodigos());
+                Console.WriteLine( LataHelper.ListarVariedades());
                 Program.IngresarLata(expendedora);
             
                 try
@@ -142,7 +142,7 @@ namespace EjExpendedora
         {
             if (Program.EstaEncendida(expendedora) && !expendedora.EstaVacia())
             {
-                LataHelper.ListarCodigos();
+                Console.WriteLine( LataHelper.ListarVariedades());
                 try
                 {
                     string codigo = Validations.StringInsert("Ingrese el codigo del producto");

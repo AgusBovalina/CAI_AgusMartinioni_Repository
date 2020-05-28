@@ -35,7 +35,22 @@ namespace ExpendedoraBO
 
         }
 
-            
+        public static List<string> ListaCodigos()
+        {
+            List<string >listaCodigos = new List<string>();
+            listaCodigos.Add(co1.Codigo);
+            listaCodigos.Add(co2.Codigo);
+            listaCodigos.Add(ll1.Codigo);
+            listaCodigos.Add(ll2.Codigo);
+            listaCodigos.Add(fa1.Codigo);
+            listaCodigos.Add(fa2.Codigo);
+
+
+
+            return listaCodigos;
+
+
+        }
 
         public static Variedad GetVariedad(string codigo)
         {
@@ -52,7 +67,7 @@ namespace ExpendedoraBO
         }
 
         //ver. 
-        public static string ListarCodigos()
+        public static string ListarVariedades()
         {
             
             string list = "";
@@ -63,6 +78,8 @@ namespace ExpendedoraBO
             return list;
 
         }
+
+
 
         
         public static string GetCodigoCorrecto(string codigoLata)

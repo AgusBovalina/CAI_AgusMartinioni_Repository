@@ -1,6 +1,6 @@
 ﻿namespace ExpededoraForms
 {
-    partial class FrmObtenerBalance
+    partial class Frm3ObtenerBalance
     {
         /// <summary>
         /// Required designer variable.
@@ -98,8 +98,9 @@
             this.btnAceptar.TabIndex = 29;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // FrmObtenerBalance
+            // Frm3ObtenerBalance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,8 +112,8 @@
             this.Controls.Add(this.txtBalanceTtal);
             this.Controls.Add(this.txtGanacias);
             this.Controls.Add(this.txtSaldoInicial);
-            this.Name = "FrmObtenerBalance";
-            this.Text = "ObtenerBalance";
+            this.Name = "Frm3ObtenerBalance";
+            this.Text = "Balance";
             this.ResumeLayout(false);
             this.PerformLayout();
 

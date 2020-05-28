@@ -1,6 +1,6 @@
 ﻿namespace ExpededoraForms
 {
-    partial class FrmIngresarLata
+    partial class Frm3IngresarLata
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstVariedad = new System.Windows.Forms.ListBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtSabor = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblListLabel = new System.Windows.Forms.Label();
             this.txtVolumen = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,13 +43,13 @@
             this.btnIngresarLata = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lstVariedad
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(29, 52);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(393, 368);
-            this.listBox1.TabIndex = 0;
+            this.lstVariedad.FormattingEnabled = true;
+            this.lstVariedad.Location = new System.Drawing.Point(29, 52);
+            this.lstVariedad.Name = "lstVariedad";
+            this.lstVariedad.Size = new System.Drawing.Size(393, 368);
+            this.lstVariedad.TabIndex = 0;
             // 
             // txtCodigo
             // 
@@ -75,14 +75,14 @@
             this.txtSabor.Size = new System.Drawing.Size(167, 20);
             this.txtSabor.TabIndex = 3;
             // 
-            // label1
+            // lblListLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Elija qué variedad desea ingresar";
+            this.lblListLabel.AutoSize = true;
+            this.lblListLabel.Location = new System.Drawing.Point(28, 21);
+            this.lblListLabel.Name = "lblListLabel";
+            this.lblListLabel.Size = new System.Drawing.Size(163, 13);
+            this.lblListLabel.TabIndex = 4;
+            this.lblListLabel.Text = "Elija qué variedad desea ingresar";
             // 
             // txtVolumen
             // 
@@ -152,7 +152,7 @@
             this.btnIngresarLata.Text = "Ingresar Lata";
             this.btnIngresarLata.UseVisualStyleBackColor = true;
             // 
-            // FrmIngresarLata
+            // Frm3IngresarLata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -165,12 +165,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtVolumen);
             this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblListLabel);
             this.Controls.Add(this.txtSabor);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.listBox1);
-            this.Name = "FrmIngresarLata";
+            this.Controls.Add(this.lstVariedad);
+            this.Name = "Frm3IngresarLata";
             this.Text = "Ingresar Lata";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,11 +179,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstVariedad;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtSabor;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblListLabel;
         private System.Windows.Forms.TextBox txtVolumen;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label2;

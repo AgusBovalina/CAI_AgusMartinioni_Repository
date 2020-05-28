@@ -1,6 +1,6 @@
 ﻿namespace ExpededoraForms
 {
-    partial class FrmExpendedora
+    partial class Frm1Expendedora
     {
         /// <summary>
         /// Required designer variable.
@@ -53,14 +53,14 @@
             this.label1.Text = "La máquina está apagada.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // FrmExpendedora
+            // Frm1Expendedora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(238, 94);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEncender);
-            this.Name = "FrmExpendedora";
+            this.Name = "Frm1Expendedora";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

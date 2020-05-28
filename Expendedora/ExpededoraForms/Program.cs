@@ -17,7 +17,7 @@ namespace ExpededoraForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmExpendedora(new Expendedora("Coca-Cola Company", 100, 1000)));
+            Application.Run(new Frm1Expendedora(new Expendedora("Coca-Cola Company", 100, 1000)));
         }
     }
 }

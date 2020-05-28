@@ -1,6 +1,6 @@
 ﻿namespace ExpededoraForms
 {
-    partial class FrmExtraerLata
+    partial class Frm3ExtraerLata
     {
         /// <summary>
         /// Required designer variable.
@@ -32,11 +32,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblListlabel = new System.Windows.Forms.Label();
             this.txtSabor = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstVariedad = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -54,6 +54,7 @@
             this.btnMostrarStock.TabIndex = 25;
             this.btnMostrarStock.Text = "Mostrar Stock";
             this.btnMostrarStock.UseVisualStyleBackColor = true;
+            this.btnMostrarStock.Click += new System.EventHandler(this.btnMostrarStock_Click);
             // 
             // label4
             // 
@@ -82,14 +83,14 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Código";
             // 
-            // label1
+            // lblListlabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(288, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Doble click para elegir lata";
+            this.lblListlabel.AutoSize = true;
+            this.lblListlabel.Location = new System.Drawing.Point(288, 21);
+            this.lblListlabel.Name = "lblListlabel";
+            this.lblListlabel.Size = new System.Drawing.Size(132, 13);
+            this.lblListlabel.TabIndex = 17;
+            this.lblListlabel.Text = "Doble click para elegir lata";
             // 
             // txtSabor
             // 
@@ -115,13 +116,13 @@
             this.txtCodigo.Size = new System.Drawing.Size(167, 20);
             this.txtCodigo.TabIndex = 14;
             // 
-            // listBox1
+            // lstVariedad
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(289, 52);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(393, 342);
-            this.listBox1.TabIndex = 13;
+            this.lstVariedad.FormattingEnabled = true;
+            this.lstVariedad.Location = new System.Drawing.Point(289, 52);
+            this.lstVariedad.Name = "lstVariedad";
+            this.lstVariedad.Size = new System.Drawing.Size(393, 342);
+            this.lstVariedad.TabIndex = 13;
             // 
             // label5
             // 
@@ -182,7 +183,7 @@
             this.btnExtraerLata.Text = "Extraer Lata";
             this.btnExtraerLata.UseVisualStyleBackColor = true;
             // 
-            // FrmExtraerLata
+            // Frm3ExtraerLata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,13 +199,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblListlabel);
             this.Controls.Add(this.txtSabor);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.listBox1);
-            this.Name = "FrmExtraerLata";
-            this.Text = "ExtraerLata";
+            this.Controls.Add(this.lstVariedad);
+            this.Name = "Frm3ExtraerLata";
+            this.Text = "Extraer Lata";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,11 +217,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblListlabel;
         private System.Windows.Forms.TextBox txtSabor;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstVariedad;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPrecio;

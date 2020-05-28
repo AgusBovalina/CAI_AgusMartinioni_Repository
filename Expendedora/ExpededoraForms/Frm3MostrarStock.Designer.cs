@@ -1,6 +1,6 @@
 ﻿namespace ExpededoraForms
 {
-    partial class FrmMostrarStock
+    partial class Frm3MostrarStock
     {
         /// <summary>
         /// Required designer variable.
@@ -39,11 +39,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSabor = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstLataToString = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.cmbCodigo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -122,9 +122,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(319, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 13);
+            this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Elija qué variedad desea ingresar";
+            this.label1.Text = "Seleccione lata";
             // 
             // txtSabor
             // 
@@ -142,21 +142,13 @@
             this.txtNombre.Size = new System.Drawing.Size(167, 20);
             this.txtNombre.TabIndex = 15;
             // 
-            // txtCodigo
+            // lstLataToString
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(54, 41);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(167, 20);
-            this.txtCodigo.TabIndex = 14;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(320, 41);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(393, 303);
-            this.listBox1.TabIndex = 13;
+            this.lstLataToString.FormattingEnabled = true;
+            this.lstLataToString.Location = new System.Drawing.Point(320, 41);
+            this.lstLataToString.Name = "lstLataToString";
+            this.lstLataToString.Size = new System.Drawing.Size(393, 303);
+            this.lstLataToString.TabIndex = 13;
             // 
             // label7
             // 
@@ -175,22 +167,31 @@
             this.txtStock.Size = new System.Drawing.Size(167, 20);
             this.txtStock.TabIndex = 26;
             // 
-            // button1
+            // btnLimpiar
             // 
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(320, 393);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 37);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnLimpiar.Location = new System.Drawing.Point(320, 393);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(173, 37);
+            this.btnLimpiar.TabIndex = 28;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
-            // FrmMostrarStock
+            // cmbCodigo
+            // 
+            this.cmbCodigo.FormattingEnabled = true;
+            this.cmbCodigo.Location = new System.Drawing.Point(54, 41);
+            this.cmbCodigo.Name = "cmbCodigo";
+            this.cmbCodigo.Size = new System.Drawing.Size(167, 21);
+            this.cmbCodigo.TabIndex = 29;
+            // 
+            // Frm3MostrarStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 465);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmbCodigo);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.btnAceptar);
@@ -204,9 +205,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSabor);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.listBox1);
-            this.Name = "FrmMostrarStock";
+            this.Controls.Add(this.lstLataToString);
+            this.Name = "Frm3MostrarStock";
             this.Text = "Mostrar Stock";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -214,8 +214,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -226,10 +224,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSabor;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstLataToString;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.ComboBox cmbCodigo;
     }
 }

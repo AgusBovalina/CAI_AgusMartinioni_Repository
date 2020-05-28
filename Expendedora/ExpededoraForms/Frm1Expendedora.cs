@@ -11,23 +11,33 @@ using ExpendedoraBO;
 
 namespace ExpededoraForms
 {
-    public partial class FrmExpendedora : Form
+    public partial class Frm1Expendedora : Form
     {
 
         private Expendedora expendedora;
 
         public Expendedora Expendedora { get => expendedora; }
     
-        public FrmExpendedora(Expendedora exp)
+        public Frm1Expendedora(Expendedora exp)
         {
+            this.expendedora = exp;
                        
             InitializeComponent();
                                    
         }
 
+        private void FrmExpededora_Load(object sender, EventArgs e)
+        {
+            LataHelper.AgregarList();
+            this.Text = expendedora.Proveedor;
+        }
+
         private void btnEncender_Click(object sender, EventArgs e)
         {
-
+            //revisar
+            Frm2MenuPrincipal mP = new Frm2MenuPrincipal(expendedora);
+            mP.Show();
+            this.Hide();
         }
     }
 }

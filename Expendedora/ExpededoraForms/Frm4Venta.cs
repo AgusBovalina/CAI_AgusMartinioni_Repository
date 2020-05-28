@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ExpededoraForms
 {
-    public partial class FrmIngresarLata : Form
+    public partial class Frm4Venta : Form
     {
-        public FrmIngresarLata()
+        public Frm4Venta()
         {
             InitializeComponent();
         }
