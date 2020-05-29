@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exception.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exception.Designer.cs">
+      <DependentUpon>Exception.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm3ExtraerLata.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,12 +87,6 @@
     <Compile Include="Frm3ObtenerBalance.Designer.cs">
       <DependentUpon>Frm3ObtenerBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm4ListVariedadVERSIUSAR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm4ListVariedadVERSIUSAR.Designer.cs">
-      <DependentUpon>Frm4ListVariedadVERSIUSAR.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Frm4Venta.cs">
@@ -95,6 +95,9 @@
     <Compile Include="Frm4Venta.Designer.cs">
       <DependentUpon>Frm4Venta.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Exception.resx">
+      <DependentUpon>Exception.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm3ExtraerLata.resx">
       <DependentUpon>Frm3ExtraerLata.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,9 +115,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm3ObtenerBalance.resx">
       <DependentUpon>Frm3ObtenerBalance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm4ListVariedadVERSIUSAR.resx">
-      <DependentUpon>Frm4ListVariedadVERSIUSAR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm4Venta.resx">
       <DependentUpon>Frm4Venta.cs</DependentUpon>

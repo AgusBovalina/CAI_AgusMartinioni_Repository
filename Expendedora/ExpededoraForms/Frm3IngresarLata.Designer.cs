@@ -50,6 +50,7 @@
             this.lstVariedad.Name = "lstVariedad";
             this.lstVariedad.Size = new System.Drawing.Size(393, 368);
             this.lstVariedad.TabIndex = 0;
+            this.lstVariedad.SelectedIndexChanged += new System.EventHandler(this.lstVariedad_SelectedIndexChanged);
             // 
             // txtCodigo
             // 
@@ -151,6 +152,7 @@
             this.btnIngresarLata.TabIndex = 12;
             this.btnIngresarLata.Text = "Ingresar Lata";
             this.btnIngresarLata.UseVisualStyleBackColor = true;
+            this.btnIngresarLata.Click += new System.EventHandler(this.btnIngresarLata_Click);
             // 
             // Frm3IngresarLata
             // 
@@ -172,6 +174,7 @@
             this.Controls.Add(this.lstVariedad);
             this.Name = "Frm3IngresarLata";
             this.Text = "Ingresar Lata";
+            this.Load += new System.EventHandler(this.Frm3IngresarLata_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

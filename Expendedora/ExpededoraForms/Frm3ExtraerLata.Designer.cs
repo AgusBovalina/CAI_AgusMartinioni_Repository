@@ -37,8 +37,8 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lstVariedad = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblVolumen = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtVolumen = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             // 
             // btnMostrarStock
             // 
-            this.btnMostrarStock.Location = new System.Drawing.Point(43, 438);
+            this.btnMostrarStock.Location = new System.Drawing.Point(43, 286);
             this.btnMostrarStock.Name = "btnMostrarStock";
             this.btnMostrarStock.Size = new System.Drawing.Size(174, 37);
             this.btnMostrarStock.TabIndex = 25;
@@ -96,7 +96,6 @@
             // 
             this.txtSabor.Location = new System.Drawing.Point(50, 232);
             this.txtSabor.Name = "txtSabor";
-            this.txtSabor.ReadOnly = true;
             this.txtSabor.Size = new System.Drawing.Size(167, 20);
             this.txtSabor.TabIndex = 16;
             // 
@@ -104,7 +103,6 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(50, 154);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(167, 20);
             this.txtNombre.TabIndex = 15;
             // 
@@ -112,7 +110,6 @@
             // 
             this.txtCodigo.Location = new System.Drawing.Point(50, 77);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(167, 20);
             this.txtCodigo.TabIndex = 14;
             // 
@@ -123,38 +120,37 @@
             this.lstVariedad.Name = "lstVariedad";
             this.lstVariedad.Size = new System.Drawing.Size(393, 342);
             this.lstVariedad.TabIndex = 13;
+            this.lstVariedad.SelectedIndexChanged += new System.EventHandler(this.lstVariedad_SelectedIndexChanged);
             // 
-            // label5
+            // lblPrecio
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(40, 360);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Precio";
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(40, 429);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecio.TabIndex = 29;
+            this.lblPrecio.Text = "Precio";
             // 
-            // label6
+            // lblVolumen
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 284);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Volumen";
+            this.lblVolumen.AutoSize = true;
+            this.lblVolumen.Location = new System.Drawing.Point(40, 353);
+            this.lblVolumen.Name = "lblVolumen";
+            this.lblVolumen.Size = new System.Drawing.Size(48, 13);
+            this.lblVolumen.TabIndex = 28;
+            this.lblVolumen.Text = "Volumen";
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(50, 386);
+            this.txtPrecio.Location = new System.Drawing.Point(50, 455);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.ReadOnly = true;
             this.txtPrecio.Size = new System.Drawing.Size(167, 20);
             this.txtPrecio.TabIndex = 27;
             // 
             // txtVolumen
             // 
-            this.txtVolumen.Location = new System.Drawing.Point(50, 309);
+            this.txtVolumen.Location = new System.Drawing.Point(50, 378);
             this.txtVolumen.Name = "txtVolumen";
-            this.txtVolumen.ReadOnly = true;
             this.txtVolumen.Size = new System.Drawing.Size(167, 20);
             this.txtVolumen.TabIndex = 26;
             // 
@@ -182,6 +178,7 @@
             this.btnExtraerLata.TabIndex = 32;
             this.btnExtraerLata.Text = "Extraer Lata";
             this.btnExtraerLata.UseVisualStyleBackColor = true;
+            this.btnExtraerLata.Click += new System.EventHandler(this.btnExtraerLata_Click);
             // 
             // Frm3ExtraerLata
             // 
@@ -191,8 +188,8 @@
             this.Controls.Add(this.btnExtraerLata);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtIngreseDinero);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblPrecio);
+            this.Controls.Add(this.lblVolumen);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtVolumen);
             this.Controls.Add(this.btnMostrarStock);
@@ -206,6 +203,7 @@
             this.Controls.Add(this.lstVariedad);
             this.Name = "Frm3ExtraerLata";
             this.Text = "Extraer Lata";
+            this.Load += new System.EventHandler(this.Frm3ExtraerLata_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,12 +220,12 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.ListBox lstVariedad;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblVolumen;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.TextBox txtVolumen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtIngreseDinero;
         private System.Windows.Forms.Button btnExtraerLata;
+        private System.Windows.Forms.TextBox txtVolumen;
     }
 }

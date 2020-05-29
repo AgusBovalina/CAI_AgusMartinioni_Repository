@@ -116,6 +116,7 @@
             this.Text = "Balance";
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.Load += new System.EventHandler(this.FrmObtenerBalance_Load);
 
         }
 

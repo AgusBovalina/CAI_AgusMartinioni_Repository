@@ -15,15 +15,71 @@ namespace ExpededoraForms
     {
         private Expendedora expendedora;
         private string listLabel;
+        private Frm3MostrarStock mS;
+
+
+
+
         public Frm3ExtraerLata(Expendedora exp, Form formPropietario)
         {
 
             this.expendedora = exp;
             this.listLabel = "Doble click para elegir lata";
             this.Owner = formPropietario;
-            this.Owner.Hide();
+            Frm3MostrarStock mS = new Frm3MostrarStock(expendedora, this, txtCodigo.Text);
             InitializeComponent();
         }
+
+        #region "Eventos"
+        private void Frm3ExtraerLata_Load(object sender, EventArgs e)
+        {
+            lblListlabel.Text = listLabel;
+            
+            this.CargarLista();
+
+        }
+
+        
+        private void btnMostrarStock_Click(object sender, EventArgs e)
+        {
+
+            //Frm3MostrarStock mS = new Frm3MostrarStock(expendedora, this, txtCodigo.Text);
+            mS.Owner = this;
+            mS.Show();
+
+        }
+
+        
+
+        private void btnExtraerLata_Click(object sender, EventArgs e)
+        {
+            Lata lata = new Lata(txtCodigo.Text, Convert.ToDouble(txtVolumen.Text), Convert.ToDouble(txtPrecio.Text));
+            Venta nuevaVenta = expendedora.ExtraerLata(lata, Convert.ToDouble(txtIngreseDinero.Text));
+            Frm4Venta v = new Frm4Venta(nuevaVenta,expendedora, this);
+            v.Owner = this;
+            v.Show();
+            this.Dispose();
+        }
+
+        private void lstVariedad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Variedad seleccionada = (Variedad)lstVariedad.SelectedItem;
+
+            if (seleccionada != null)
+            {
+                CompletarFormularioVariedad(seleccionada);
+            }
+        }
+
+        private void Frm3ExtraerLata_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Show();
+            this.Dispose();
+        }
+
+
+        #endregion
+
 
         #region "Métodos"
         private bool ValidarCampos()
@@ -33,7 +89,17 @@ namespace ExpededoraForms
 
         private void LimpiarCampos()
         {
-            throw new NotImplementedException();
+            lstVariedad.SelectedIndex = -1;
+
+            txtCodigo.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            txtSabor.Text = string.Empty;
+            txtVolumen.Text = string.Empty;
+            txtPrecio.Text = string.Empty;
+            txtIngreseDinero.Text = string.Empty;
+
+            GrisarCampos();
+            
         }
         private void CargarLista()
         {
@@ -45,29 +111,60 @@ namespace ExpededoraForms
 
         private void GrisarCampos()
         {
-            throw new NotImplementedException();
+            if(txtVolumen.Text=="" && txtPrecio.Text=="")
+            {
+                lblVolumen.Visible = false;
+                txtVolumen.Visible = false;
+                lblPrecio.Visible = false;
+                txtPrecio.Visible = false;
+            }
+            else
+            {
+                lblVolumen.Visible = true;
+                txtVolumen.Visible = true;
+                lblPrecio.Visible = true;
+                txtPrecio.Visible = true;
+            }
         }
 
         private void CompletarFormularioVariedad(Variedad seleccionada)
         {
-            throw new NotImplementedException();
+            txtCodigo.Enabled = false;
+            txtNombre.Enabled = false;
+            txtSabor.Enabled = false;
+            txtVolumen.Enabled = false;
+            txtPrecio.Enabled = false;
+
+            txtCodigo.Text = seleccionada.Codigo;
+            txtNombre.Text = seleccionada.Nombre;
+            txtSabor.Text = seleccionada.Sabor;
         }
 
+        private void CompletarVolumenPrecio()
+        {
+            lblVolumen.Visible = true;
+            lblPrecio.Visible = true;
+            txtVolumen.Visible = true;
+            txtPrecio.Visible = true;
+
+            txtVolumen.Text = mS.volumen;
+            txtPrecio.Text = mS.precio;
+        }
+
+        //no funciona porque no lo puedo llamar, ni siendo publico
+        public void prueba(string volumen, string precio)
+        {
+            lblVolumen.Visible = true;
+            lblPrecio.Visible = true;
+            txtVolumen.Visible = true;
+            txtPrecio.Visible = true;
+
+            txtVolumen.Text = mS.volumen;
+            txtPrecio.Text = mS.precio;
+        }
 
         #endregion
 
-        private void Frm3ExtraerLata_Load(object sender, EventArgs e)
-        {
-            lblListlabel.Text = listLabel;
-            this.CargarLista();
-                                  
-        }
-               
-
-        private void btnMostrarStock_Click(object sender, EventArgs e)
-        {
-            //Abre la ventana de stock con todos los campos grisados, y solo muestra lista segun datos en este form
-            throw new NotImplementedException();
-        }
+        
     }
 }

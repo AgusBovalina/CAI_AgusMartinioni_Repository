@@ -38,9 +38,9 @@
             // 
             // txtDescripLata
             // 
+            this.txtDescripLata.Enabled = false;
             this.txtDescripLata.Location = new System.Drawing.Point(30, 68);
             this.txtDescripLata.Name = "txtDescripLata";
-            this.txtDescripLata.ReadOnly = true;
             this.txtDescripLata.Size = new System.Drawing.Size(390, 20);
             this.txtDescripLata.TabIndex = 0;
             this.txtDescripLata.Text = " ";
@@ -65,9 +65,9 @@
             // 
             // txtVuelto
             // 
+            this.txtVuelto.Enabled = false;
             this.txtVuelto.Location = new System.Drawing.Point(30, 155);
             this.txtVuelto.Name = "txtVuelto";
-            this.txtVuelto.ReadOnly = true;
             this.txtVuelto.Size = new System.Drawing.Size(390, 20);
             this.txtVuelto.TabIndex = 2;
             this.txtVuelto.Text = " ";
@@ -83,12 +83,13 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(299, 193);
+            this.btnAceptar.Location = new System.Drawing.Point(288, 193);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(121, 37);
+            this.btnAceptar.Size = new System.Drawing.Size(132, 37);
             this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // Frm4Venta
             // 
@@ -103,6 +104,7 @@
             this.Controls.Add(this.txtDescripLata);
             this.Name = "Frm4Venta";
             this.Text = "Venta";
+            this.Load += new System.EventHandler(this.Frm4Venta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

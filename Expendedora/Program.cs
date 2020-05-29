@@ -146,10 +146,14 @@ namespace EjExpendedora
                 try
                 {
                     string codigo = Validations.StringInsert("Ingrese el codigo del producto");
-                    if (LataHelper.GetCodigoCorrecto(codigo) != "" && expendedora.GetLataSeleccionada(codigo) != null)
+                    double volumen = Validations.DoubleInsert("Ingrese el volumen del producto", 0, double.MaxValue);
+                    double precio = Validations.DoubleInsert("Ingrese el precio del producto",0, double.MaxValue);
+
+                    Lata lata = new Lata(codigo, precio, volumen);
+                    if (LataHelper.GetCodigoCorrecto(codigo) != "" && expendedora.GetLataSeleccionada(codigo, volumen, precio) != null)
                     {
                         double pago = Validations.DoubleInsert("Ingrese el dinero", 0, double.MaxValue);
-                        Console.WriteLine(expendedora.ExtraerLata(codigo, pago).ToString());                        
+                        Console.WriteLine(expendedora.ExtraerLata(lata, pago).ToString());                        
                     }
                     else if (expendedora.EstaVacia())
                     {

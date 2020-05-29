@@ -19,7 +19,6 @@ namespace ExpededoraForms
         public Frm3ObtenerBalance(Expendedora expendedora, Form formPropietario)
         {
             this.Owner = formPropietario;
-            this.Owner.Hide();
             this.saldoInicial = expendedora.SaldoInicial;
             this.balanceTotal = expendedora.Dinero;
             this.ganancias = balanceTotal - saldoInicial;
@@ -37,6 +36,12 @@ namespace ExpededoraForms
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Owner.Show();
+            this.Dispose();
+        }
+
+        private void Frm3ObtenerBalance_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Show();
             this.Dispose();
         }
     }

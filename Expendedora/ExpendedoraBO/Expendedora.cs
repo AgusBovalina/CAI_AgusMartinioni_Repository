@@ -17,6 +17,21 @@ namespace ExpendedoraBO
         private double saldoInicial;
         private bool encendida;
         private const int cantCapacidad = 100;
+
+        public void CargarLatasHardcodeadas()
+        {
+            Lata a = new Lata("CO1", 20, 250);
+            Lata b = new Lata("CO2", 25, 250);
+            Lata c = new Lata("FA1", 15, 250);
+            Lata d = new Lata("LL1", 20, 400);
+            Lata e = new Lata("FA1", 15, 250);
+
+            Latas.Add(a);
+            Latas.Add(b);
+            Latas.Add(c);
+            Latas.Add(d);
+            Latas.Add(e);
+        }
         
 
         public Expendedora(string proveedor, int capacidad, double dinero)
@@ -26,7 +41,7 @@ namespace ExpendedoraBO
             this.Ventas = new List<Venta>();
             this.Proveedor = proveedor;
             this.CapacidadMax = capacidad;
-            this.Dinero += dinero;
+            this.Dinero = dinero;
             this.SaldoInicial = dinero;
             this.Encendida = false;
             LataHelper.AgregarList();
@@ -74,9 +89,9 @@ namespace ExpendedoraBO
         }
         public double SaldoInicial { get => saldoInicial; private set
             {
-                if (capacidadMax >= 0)
+                if (dinero >= 0)
                 {
-                    dinero = value;
+                    saldoInicial = value;
                 }
                 else
                 {
@@ -94,7 +109,7 @@ namespace ExpendedoraBO
         public void AgregarLata(Lata lata)
         {
             
-            if(LataHelper.GetCodigoCorrecto(lata.Codigo) != "" && this.GetLataSeleccionada(lata.Codigo) == null)
+            if(LataHelper.GetCodigoCorrecto(lata.Codigo) != "" && this.GetLataSeleccionada(lata.Codigo, lata.Volumen, lata.Precio) == null)
             {
                 
                 latas.Add(lata);
@@ -104,7 +119,7 @@ namespace ExpendedoraBO
             {
                 throw new CodigoInvalidoException();
 
-            } else if (this.GetLataSeleccionada(lata.Codigo) != null)
+            } else if (this.GetLataSeleccionada(lata.Codigo, lata.Volumen, lata.Precio) != null)
             {
                 throw new Exception("El producto ingresado ya existe");
             }
@@ -112,9 +127,9 @@ namespace ExpendedoraBO
             
         }
 
-        public Venta ExtraerLata(string codigo, double pago)
+        public Venta ExtraerLata(Lata lata, double pago)
         {
-            Lata l = this.GetLataSeleccionada(codigo);
+            Lata l = this.GetLataSeleccionada(lata.Codigo, lata.Volumen, lata.Precio);
                   
 
             if (l.Precio <= pago)
@@ -133,10 +148,11 @@ namespace ExpendedoraBO
 
             Venta nuevaVenta = new Venta(l, CalcVuelto(l.Precio, pago));
 
+            Ventas.Add(nuevaVenta);
             return nuevaVenta;
             
         }
-
+        
         public string GetBalance()
         {
             return string.Format("Dinero acumulado: {0}", Dinero);
@@ -187,13 +203,13 @@ namespace ExpendedoraBO
         }
 
 
-        public Lata GetLataSeleccionada(string codigoLata)
+        public Lata GetLataSeleccionada(string codigoLata, double volumenLata, double precioLata)
         {
             Lata lataSeleccionada = null;
 
             foreach (Lata l in Latas)
             {
-                if (codigoLata == l.Codigo)
+                if (codigoLata == l.Codigo&& volumenLata == l.Volumen && precioLata == l.Precio)
                 {
                     return lataSeleccionada = l;
                 }
@@ -207,6 +223,8 @@ namespace ExpendedoraBO
         {
             return pago - precio;
         }
+
+
 
     }
 }

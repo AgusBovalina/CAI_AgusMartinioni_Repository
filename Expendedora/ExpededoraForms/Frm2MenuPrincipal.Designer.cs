@@ -33,6 +33,7 @@
             this.btnBalance = new System.Windows.Forms.Button();
             this.btnMostrarStock = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnExtraerLata
@@ -85,11 +86,22 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "label1";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(38, 414);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(469, 54);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Frm2MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(547, 426);
+            this.ClientSize = new System.Drawing.Size(547, 506);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBalance);
             this.Controls.Add(this.btnMostrarStock);
@@ -99,6 +111,7 @@
             this.Text = "Menu Principal";
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
 
         }
 
@@ -109,5 +122,6 @@
         private System.Windows.Forms.Button btnBalance;
         private System.Windows.Forms.Button btnMostrarStock;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

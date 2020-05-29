@@ -21,21 +21,24 @@ namespace ExpededoraForms
         public Frm1Expendedora(Expendedora exp)
         {
             this.expendedora = exp;
-                       
+            this.expendedora.CargarLatasHardcodeadas();
+            LataHelper.AgregarList();
             InitializeComponent();
                                    
         }
 
         private void FrmExpededora_Load(object sender, EventArgs e)
         {
-            LataHelper.AgregarList();
+            
+
             this.Text = expendedora.Proveedor;
         }
 
         private void btnEncender_Click(object sender, EventArgs e)
         {
-            //revisar
-            Frm2MenuPrincipal mP = new Frm2MenuPrincipal(expendedora);
+            expendedora.EncenderMaquina();
+            Frm2MenuPrincipal mP = new Frm2MenuPrincipal(expendedora, this);
+            mP.Owner = this;
             mP.Show();
             this.Hide();
         }

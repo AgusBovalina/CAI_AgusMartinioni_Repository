@@ -55,6 +55,7 @@
             this.btnAceptar.TabIndex = 25;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label6
             // 
@@ -149,6 +150,7 @@
             this.lstLataToString.Name = "lstLataToString";
             this.lstLataToString.Size = new System.Drawing.Size(393, 303);
             this.lstLataToString.TabIndex = 13;
+            this.lstLataToString.SelectedIndexChanged += new System.EventHandler(this.lstLataToString_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -176,14 +178,17 @@
             this.btnLimpiar.TabIndex = 28;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // cmbCodigo
             // 
+            this.cmbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodigo.FormattingEnabled = true;
             this.cmbCodigo.Location = new System.Drawing.Point(54, 41);
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(167, 21);
-            this.cmbCodigo.TabIndex = 29;
+            this.cmbCodigo.TabIndex = 0;
+            this.cmbCodigo.SelectionChangeCommitted += new System.EventHandler(this.cmbCodigo_SelectionChangeCommitted);
             // 
             // Frm3MostrarStock
             // 
@@ -208,6 +213,8 @@
             this.Controls.Add(this.lstLataToString);
             this.Name = "Frm3MostrarStock";
             this.Text = "Mostrar Stock";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm3MostrarStock_FormClosing);
+            this.Load += new System.EventHandler(this.Frm3MostrarStock_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
