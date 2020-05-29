@@ -43,29 +43,66 @@ namespace ExpededoraForms
         }
         
 
-        private void btnMostrarStock_Click(object sender, EventArgs e)
+        private void BtnMostrarStock_Click(object sender, EventArgs e)
         {
 
-            mS = new Frm3MostrarStock(expendedora, this);
-            mS.Codigo = txtCodigo.Text;
-            mS.Owner = this;
-            mS.Show();
-            this.Hide();
-
+            if (ValidarCampos())
+            {
+                mS = new Frm3MostrarStock(expendedora, this);
+                mS.Codigo = txtCodigo.Text;
+                mS.Owner = this;
+                mS.Show();
+                this.Hide();
+            }
+            
         }
 
 
-        private void btnExtraerLata_Click(object sender, EventArgs e)
+        private void BtnExtraerLata_Click(object sender, EventArgs e)
         {
-            Lata lata = new Lata(txtCodigo.Text, Convert.ToDouble(txtPrecio.Text), Convert.ToDouble(txtVolumen.Text));
-            Venta nuevaVenta = expendedora.ExtraerLata(lata, Convert.ToDouble(txtIngreseDinero.Text));
-            Frm4Venta v = new Frm4Venta(nuevaVenta,expendedora, this);
-            v.Owner = this;
-            v.Show();
-            this.Hide();
+
+            if (txtIngreseDinero.Text == string.Empty)
+            {
+                MessageBox.Show("Por favor ingrese el pago");
+                               
+            }
+            else
+            {
+                try
+                {                                    
+                    Lata lata = new Lata(txtCodigo.Text, Convert.ToDouble(txtPrecio.Text), Convert.ToDouble(txtVolumen.Text));
+                    Venta nuevaVenta = expendedora.ExtraerLata(lata, Convert.ToDouble(txtIngreseDinero.Text));
+                    Frm4Venta v = new Frm4Venta(nuevaVenta, expendedora, this);
+                    v.Owner = this;
+                    v.Show();
+                    this.Hide();
+                }
+                catch (DineroInsuficienteException ex )
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (SinStockException ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+                catch(FormatException )
+                {
+                    
+                    MessageBox.Show("El formato ingresado de dinero no es el correcto");
+                    txtIngreseDinero.Text = string.Empty;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+            }
+
         }
 
-        private void lstVariedad_SelectedIndexChanged(object sender, EventArgs e)
+        private void LstVariedad_SelectedIndexChanged(object sender, EventArgs e)
         {
             Variedad seleccionada = (Variedad)lstVariedad.SelectedItem;
 
@@ -88,7 +125,21 @@ namespace ExpededoraForms
         #region "Métodos"
         private bool ValidarCampos()
         {
-            throw new NotImplementedException();
+            bool valido = true;
+            string msg = string.Empty;
+
+            if (txtCodigo.Text == string.Empty)
+                msg = "Debe seleccionar una variedad\n";
+
+
+
+            if (msg != string.Empty)
+            {
+                valido = false;
+                MessageBox.Show(msg);
+            }
+
+            return valido;
         }
 
         private void LimpiarCampos()

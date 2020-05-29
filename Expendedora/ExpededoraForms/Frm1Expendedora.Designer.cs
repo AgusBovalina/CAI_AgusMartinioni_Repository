@@ -40,7 +40,7 @@
             this.btnEncender.TabIndex = 0;
             this.btnEncender.Text = "Encender";
             this.btnEncender.UseVisualStyleBackColor = true;
-            this.btnEncender.Click += new System.EventHandler(this.btnEncender_Click);
+            this.btnEncender.Click += new System.EventHandler(this.BtnEncender_Click);
             // 
             // label1
             // 

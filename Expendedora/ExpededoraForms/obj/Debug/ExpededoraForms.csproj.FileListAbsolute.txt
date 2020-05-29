@@ -16,4 +16,3 @@ C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMar
 C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Expendedora\ExpededoraForms\obj\Debug\ExpededoraForms.csproj.CopyComplete
 C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Expendedora\ExpededoraForms\obj\Debug\ExpededoraForms.exe
 C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Expendedora\ExpededoraForms\obj\Debug\ExpededoraForms.pdb
-C:\Users\I515818\OneDrive - SAP SE\Documents\Facultad\CAI\Repository\CAI_AgusMartinioni_Repository\Expendedora\ExpededoraForms\obj\Debug\ExpededoraForms.Exception.resources

@@ -31,7 +31,7 @@ namespace ExpededoraForms
 
             this.CargarLista();
         }
-        private void lstVariedad_SelectedIndexChanged(object sender, EventArgs e)
+        private void LstVariedad_SelectedIndexChanged(object sender, EventArgs e)
         {
             Variedad seleccionada = (Variedad)lstVariedad.SelectedItem;
 
@@ -40,13 +40,53 @@ namespace ExpededoraForms
                 CompletarFormularioVariedad(seleccionada);
             }
         }
-        private void btnIngresarLata_Click(object sender, EventArgs e)
+        private void BtnIngresarLata_Click(object sender, EventArgs e)
         {
-            Lata l = new Lata(txtCodigo.Text, Convert.ToDouble(txtPrecio.Text), Convert.ToDouble(txtVolumen.Text));
-            expendedora.AgregarLata(l);
-            MessageBox.Show("La lata ha sido ingresada exitosamente");
-            this.Owner.Show();
-            this.Dispose();
+            if (ValidarCampos())
+            {
+                try
+                {              
+                
+                    Lata l = new Lata(txtCodigo.Text, Convert.ToDouble(txtPrecio.Text), Convert.ToDouble(txtVolumen.Text));
+                    expendedora.AgregarLata(l);
+                    CargarLista();
+                    MessageBox.Show("La lata ha sido ingresada exitosamente");
+                    this.Owner.Show();
+                    this.Dispose();
+                }
+                catch (CapacidadInsuficienteException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (FormatException)
+                {
+                    try
+                    {
+                        Convert.ToDouble(txtVolumen.Text);
+
+                    }
+                    catch(FormatException)
+                    {
+                        MessageBox.Show("El formato ingresado de volumen no es el correcto");
+                        txtVolumen.Text = string.Empty;
+                    }
+                    try
+                    {
+                        Convert.ToDouble(txtPrecio.Text);
+                    }
+                    catch(FormatException)
+                    {
+                        MessageBox.Show("El formato ingresado de volumen no es el correcto");
+                        txtPrecio.Text = string.Empty;
+                    }
+                    
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
         }
 
         private void Frm3IngresarLata_FormClosing(object sender, FormClosingEventArgs e)
@@ -59,7 +99,21 @@ namespace ExpededoraForms
         #region "Métodos"
         private bool ValidarCampos()
         {
-            throw new NotImplementedException();
+            bool valido = true;
+            string msg = string.Empty;
+
+            if (txtCodigo.Text == "-SELECCIONE-")
+                msg = "Debe seleccionar una variedad\n";
+
+
+
+            if (msg != string.Empty)
+            {
+                valido = false;
+                MessageBox.Show(msg);
+            }
+
+            return valido;
         }
 
         private void LimpiarCampos()

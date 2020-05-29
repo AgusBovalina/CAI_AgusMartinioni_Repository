@@ -31,7 +31,7 @@ namespace ExpededoraForms
             txtDescripLata.Text = lataExtraida.ToString();
             txtVuelto.Text = "$ " + vuelto.ToString();
         }
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
             this.Owner.Owner.Show();
             this.Owner.Dispose();

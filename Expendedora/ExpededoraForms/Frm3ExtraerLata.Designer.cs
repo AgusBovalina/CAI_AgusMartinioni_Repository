@@ -54,7 +54,7 @@
             this.btnMostrarStock.TabIndex = 25;
             this.btnMostrarStock.Text = "Mostrar Stock";
             this.btnMostrarStock.UseVisualStyleBackColor = true;
-            this.btnMostrarStock.Click += new System.EventHandler(this.btnMostrarStock_Click);
+            this.btnMostrarStock.Click += new System.EventHandler(this.BtnMostrarStock_Click);
             // 
             // label4
             // 
@@ -120,7 +120,7 @@
             this.lstVariedad.Name = "lstVariedad";
             this.lstVariedad.Size = new System.Drawing.Size(393, 342);
             this.lstVariedad.TabIndex = 13;
-            this.lstVariedad.SelectedIndexChanged += new System.EventHandler(this.lstVariedad_SelectedIndexChanged);
+            this.lstVariedad.SelectedIndexChanged += new System.EventHandler(this.LstVariedad_SelectedIndexChanged);
             // 
             // lblPrecio
             // 
@@ -178,7 +178,7 @@
             this.btnExtraerLata.TabIndex = 32;
             this.btnExtraerLata.Text = "Extraer Lata";
             this.btnExtraerLata.UseVisualStyleBackColor = true;
-            this.btnExtraerLata.Click += new System.EventHandler(this.btnExtraerLata_Click);
+            this.btnExtraerLata.Click += new System.EventHandler(this.BtnExtraerLata_Click);
             // 
             // Frm3ExtraerLata
             // 

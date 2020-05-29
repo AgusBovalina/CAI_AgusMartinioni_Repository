@@ -45,12 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exception.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Exception.Designer.cs">
-      <DependentUpon>Exception.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm3ExtraerLata.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,9 +89,6 @@
     <Compile Include="Frm4Venta.Designer.cs">
       <DependentUpon>Frm4Venta.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Exception.resx">
-      <DependentUpon>Exception.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm3ExtraerLata.resx">
       <DependentUpon>Frm3ExtraerLata.cs</DependentUpon>
     </EmbeddedResource>

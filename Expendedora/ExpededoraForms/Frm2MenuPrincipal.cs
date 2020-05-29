@@ -22,14 +22,14 @@ namespace ExpededoraForms
             this.expendedora = expendedora;
             InitializeComponent();
         }
+       
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
             this.label1.Text = expendedora.Proveedor;
-
         }
 
-        private void btnExtraerLata_Click(object sender, EventArgs e)
+        private void BtnExtraerLata_Click(object sender, EventArgs e)
         {
             Frm3ExtraerLata eL = new Frm3ExtraerLata(expendedora, this);
             eL.Owner = this;
@@ -38,7 +38,7 @@ namespace ExpededoraForms
             
         }
 
-        private void btnIngresarLata_Click(object sender, EventArgs e)
+        private void BtnIngresarLata_Click(object sender, EventArgs e)
         {
             Frm3IngresarLata iL = new Frm3IngresarLata(expendedora, this);
             iL.Owner = this;
@@ -46,7 +46,7 @@ namespace ExpededoraForms
             this.Hide();
         }
 
-        private void btnMostrarStock_Click(object sender, EventArgs e)
+        private void BtnMostrarStock_Click(object sender, EventArgs e)
         {
             Frm3MostrarStock mS = new Frm3MostrarStock(expendedora, this);
             mS.Owner = this;
@@ -54,7 +54,7 @@ namespace ExpededoraForms
             this.Hide();
         }
 
-        private void btnBalance_Click(object sender, EventArgs e)
+        private void BtnBalance_Click(object sender, EventArgs e)
         {
             Frm3ObtenerBalance b = new Frm3ObtenerBalance(expendedora, this);
             b.Owner = this;
@@ -62,7 +62,7 @@ namespace ExpededoraForms
             this.Hide();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Owner.Dispose();
             this.Dispose();
@@ -72,6 +72,6 @@ namespace ExpededoraForms
             this.Owner.Dispose();
             this.Dispose();
         }
-
+        
     }
 }

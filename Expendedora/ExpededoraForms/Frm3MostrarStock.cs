@@ -53,7 +53,7 @@ namespace ExpededoraForms
 
         }
 
-       private void lstLataToString_SelectedIndexChanged(object sender, EventArgs e)
+       private void LstLataToString_SelectedIndexChanged(object sender, EventArgs e)
         {
             Lata seleccionada = (Lata)lstLataToString.SelectedItem;
             
@@ -62,20 +62,11 @@ namespace ExpededoraForms
                 CompletarFormularioLata(seleccionada);
                       
             }
-        }
+       }
 
-        /*private void lstLataToString_Enter(object sender, EventArgs e)
-        {
-            Lata seleccionada = (Lata)lstLataToString.SelectedItem;
+        
 
-            if (seleccionada != null)
-            {
-                CompletarFormularioLata(seleccionada);
-
-            }
-        }*/
-
-        private void cmbCodigo_SelectionChangeCommitted(object sender, EventArgs e)
+        private void CmbCodigo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             CargarListaFiltrada();
             txtStock.Text=LatasFiltrada(cmbCodigo.Text).Count.ToString();
@@ -83,7 +74,7 @@ namespace ExpededoraForms
             
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void BtnLimpiar_Click(object sender, EventArgs e)
         {
 
             CargarListaCompleta();
@@ -92,15 +83,27 @@ namespace ExpededoraForms
 
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
             if (this.Owner is Frm3ExtraerLata)
             {
-                Volumen = txtVolumen.Text;
-                Precio = txtPrecio.Text;
-                ((Frm3ExtraerLata)this.Owner).CompletarVolumenPrecio();
-                this.Owner.Show();
-                this.Dispose();
+                try
+                {
+
+                
+                    if (ValidarCampos())
+                    {
+                        Volumen = txtVolumen.Text;
+                        Precio = txtPrecio.Text;
+                        ((Frm3ExtraerLata)this.Owner).CompletarVolumenPrecio();
+                        this.Owner.Show();
+                        this.Dispose();
+                    }
+                } 
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else if (this.Owner is Frm2MenuPrincipal)
             {
@@ -123,8 +126,23 @@ namespace ExpededoraForms
         #region "Métodos"
         private bool ValidarCampos()
         {
-            throw new NotImplementedException();
+            bool valido = true;
+            string msg = string.Empty;
+
+            if (cmbCodigo.SelectedValue.ToString() == "-SELECCIONE-")
+                msg = "Debe Seleccionar un tipo\n";
+
+
+
+            if (msg != string.Empty)
+            {
+                valido = false;
+                MessageBox.Show(msg);
+            }
+
+            return valido;
         }
+
 
         private void LimpiarCampos()
         {

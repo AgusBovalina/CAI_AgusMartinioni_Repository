@@ -33,7 +33,7 @@ namespace ExpededoraForms
             this.txtBalanceTtal.Text = Convert.ToString(balanceTotal);
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void BtnAceptar_Click(object sender, EventArgs e)
         {
             Owner.Show();
             this.Dispose();

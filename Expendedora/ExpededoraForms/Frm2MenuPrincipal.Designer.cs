@@ -44,7 +44,7 @@
             this.btnExtraerLata.TabIndex = 0;
             this.btnExtraerLata.Text = "Extraer Lata";
             this.btnExtraerLata.UseVisualStyleBackColor = true;
-            this.btnExtraerLata.Click += new System.EventHandler(this.btnExtraerLata_Click);
+            this.btnExtraerLata.Click += new System.EventHandler(this.BtnExtraerLata_Click);
             // 
             // btnIngresarLata
             // 
@@ -54,7 +54,7 @@
             this.btnIngresarLata.TabIndex = 1;
             this.btnIngresarLata.Text = "Ingresar lata";
             this.btnIngresarLata.UseVisualStyleBackColor = true;
-            this.btnIngresarLata.Click += new System.EventHandler(this.btnIngresarLata_Click);
+            this.btnIngresarLata.Click += new System.EventHandler(this.BtnIngresarLata_Click);
             // 
             // btnBalance
             // 
@@ -64,7 +64,7 @@
             this.btnBalance.TabIndex = 3;
             this.btnBalance.Text = "Balance";
             this.btnBalance.UseVisualStyleBackColor = true;
-            this.btnBalance.Click += new System.EventHandler(this.btnBalance_Click);
+            this.btnBalance.Click += new System.EventHandler(this.BtnBalance_Click);
             // 
             // btnMostrarStock
             // 
@@ -74,7 +74,7 @@
             this.btnMostrarStock.TabIndex = 2;
             this.btnMostrarStock.Text = "Stock";
             this.btnMostrarStock.UseVisualStyleBackColor = true;
-            this.btnMostrarStock.Click += new System.EventHandler(this.btnMostrarStock_Click);
+            this.btnMostrarStock.Click += new System.EventHandler(this.BtnMostrarStock_Click);
             // 
             // label1
             // 
@@ -94,7 +94,7 @@
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // Frm2MenuPrincipal
             // 

@@ -34,7 +34,7 @@ namespace ExpededoraForms
             this.Text = expendedora.Proveedor;
         }
 
-        private void btnEncender_Click(object sender, EventArgs e)
+        private void BtnEncender_Click(object sender, EventArgs e)
         {
             expendedora.EncenderMaquina();
             Frm2MenuPrincipal mP = new Frm2MenuPrincipal(expendedora, this);

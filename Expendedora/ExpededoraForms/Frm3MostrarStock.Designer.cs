@@ -55,7 +55,7 @@
             this.btnAceptar.TabIndex = 25;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // label6
             // 
@@ -150,7 +150,7 @@
             this.lstLataToString.Name = "lstLataToString";
             this.lstLataToString.Size = new System.Drawing.Size(393, 303);
             this.lstLataToString.TabIndex = 0;
-            this.lstLataToString.SelectedIndexChanged += new System.EventHandler(this.lstLataToString_SelectedIndexChanged);
+            this.lstLataToString.SelectedIndexChanged += new System.EventHandler(this.LstLataToString_SelectedIndexChanged);
             //this.lstLataToString.Enter += new System.EventHandler(this.lstLataToString_Enter);
             // 
             // label7
@@ -179,7 +179,7 @@
             this.btnLimpiar.TabIndex = 28;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.btnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // cmbCodigo
             // 
@@ -189,7 +189,7 @@
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(167, 21);
             this.cmbCodigo.TabIndex = 1;
-            this.cmbCodigo.SelectionChangeCommitted += new System.EventHandler(this.cmbCodigo_SelectionChangeCommitted);
+            this.cmbCodigo.SelectionChangeCommitted += new System.EventHandler(this.CmbCodigo_SelectionChangeCommitted);
             // 
             // Frm3MostrarStock
             // 

@@ -10,7 +10,7 @@ namespace ExpendedoraBO
     public class LataHelper
     {
         private static List<Variedad> listaVariedad;
-        
+
 
         public static List<Variedad> ListaVariedad { get => listaVariedad; set => listaVariedad = value; }
 
@@ -21,7 +21,7 @@ namespace ExpendedoraBO
         static Variedad fa1 = new Variedad("FA1", "Naranja", "Regular");
         static Variedad fa2 = new Variedad("FA2", "Naranja", "Light");
 
-        
+
 
 
         public static List<Variedad> AgregarList()
@@ -35,26 +35,34 @@ namespace ExpendedoraBO
             ListaVariedad.Add(fa2);
 
             return ListaVariedad;
-            
+
         }
-        
+
 
         public static List<string> ListaCodigos()
         {
-            List<string >listaCodigos = new List<string>();
-            listaCodigos.Add(co1.Codigo.ToUpper());
+            List<string> listaCodigos = new List<string>()
+            {
+                co1.Codigo.ToUpper(),
+                co2.Codigo.ToUpper(),
+                ll1.Codigo.ToUpper(),
+                ll2.Codigo.ToUpper(),
+                fa1.Codigo.ToUpper(),
+                fa2.Codigo.ToUpper()
+            };
+            /*listaCodigos.Add(co1.Codigo.ToUpper());
             listaCodigos.Add(co2.Codigo.ToUpper());
             listaCodigos.Add(ll1.Codigo.ToUpper());
             listaCodigos.Add(ll2.Codigo.ToUpper());
             listaCodigos.Add(fa1.Codigo.ToUpper());
-            listaCodigos.Add(fa2.Codigo.ToUpper());
+            listaCodigos.Add(fa2.Codigo.ToUpper());*/
 
 
 
             return listaCodigos;
-
-
         }
+
+        
 
         public static Variedad GetVariedad(string codigo)
         {

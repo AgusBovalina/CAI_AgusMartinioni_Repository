@@ -9,7 +9,7 @@ namespace ExpendedoraBO
 {
     public class CapacidadInsuficienteException : Exception
     {
-        public CapacidadInsuficienteException() : base("")
+        public CapacidadInsuficienteException() : base("La lata no puede ingresarse porque supera la capacidad máxima de la expendedora")
         {
 
         }
