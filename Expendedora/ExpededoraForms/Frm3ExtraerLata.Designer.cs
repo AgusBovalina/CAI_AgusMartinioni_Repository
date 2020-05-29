@@ -41,7 +41,7 @@
             this.lblVolumen = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtVolumen = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPago = new System.Windows.Forms.Label();
             this.txtIngreseDinero = new System.Windows.Forms.TextBox();
             this.btnExtraerLata = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -154,14 +154,14 @@
             this.txtVolumen.Size = new System.Drawing.Size(167, 20);
             this.txtVolumen.TabIndex = 26;
             // 
-            // label7
+            // lblPago
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(291, 429);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 13);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "Ingrese dinero";
+            this.lblPago.AutoSize = true;
+            this.lblPago.Location = new System.Drawing.Point(291, 429);
+            this.lblPago.Name = "lblPago";
+            this.lblPago.Size = new System.Drawing.Size(74, 13);
+            this.lblPago.TabIndex = 31;
+            this.lblPago.Text = "Ingrese dinero";
             // 
             // txtIngreseDinero
             // 
@@ -186,7 +186,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 516);
             this.Controls.Add(this.btnExtraerLata);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblPago);
             this.Controls.Add(this.txtIngreseDinero);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblVolumen);
@@ -223,7 +223,7 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblVolumen;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPago;
         private System.Windows.Forms.TextBox txtIngreseDinero;
         private System.Windows.Forms.Button btnExtraerLata;
         private System.Windows.Forms.TextBox txtVolumen;

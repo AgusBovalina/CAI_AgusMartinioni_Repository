@@ -18,8 +18,8 @@ namespace ExpendedoraBO
         static Variedad co2 = new Variedad("CO2", "Cola", "Light");
         static Variedad ll1 = new Variedad("LL1", "Lima limón", "Regular");
         static Variedad ll2 = new Variedad("LL2", "Lima Limón", "Light");
-        static Variedad fa1 = new Variedad("FA1", "Fanta", "Regular");
-        static Variedad fa2 = new Variedad("FA2", "Fanta", "Light");
+        static Variedad fa1 = new Variedad("FA1", "Naranja", "Regular");
+        static Variedad fa2 = new Variedad("FA2", "Naranja", "Light");
 
         
 

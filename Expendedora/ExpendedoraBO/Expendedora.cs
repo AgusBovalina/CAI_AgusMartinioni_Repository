@@ -129,7 +129,7 @@ namespace ExpendedoraBO
 
         public Venta ExtraerLata(Lata lata, double pago)
         {
-            Lata l = this.GetLataSeleccionada(lata.Codigo, lata.Volumen, lata.Precio);
+            Lata l = GetLataSeleccionada(lata.Codigo, lata.Volumen, lata.Precio);
                   
 
             if (l.Precio <= pago)

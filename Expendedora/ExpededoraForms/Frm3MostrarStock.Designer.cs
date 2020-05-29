@@ -149,8 +149,9 @@
             this.lstLataToString.Location = new System.Drawing.Point(320, 41);
             this.lstLataToString.Name = "lstLataToString";
             this.lstLataToString.Size = new System.Drawing.Size(393, 303);
-            this.lstLataToString.TabIndex = 13;
+            this.lstLataToString.TabIndex = 0;
             this.lstLataToString.SelectedIndexChanged += new System.EventHandler(this.lstLataToString_SelectedIndexChanged);
+            //this.lstLataToString.Enter += new System.EventHandler(this.lstLataToString_Enter);
             // 
             // label7
             // 
@@ -187,7 +188,7 @@
             this.cmbCodigo.Location = new System.Drawing.Point(54, 41);
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(167, 21);
-            this.cmbCodigo.TabIndex = 0;
+            this.cmbCodigo.TabIndex = 1;
             this.cmbCodigo.SelectionChangeCommitted += new System.EventHandler(this.cmbCodigo_SelectionChangeCommitted);
             // 
             // Frm3MostrarStock

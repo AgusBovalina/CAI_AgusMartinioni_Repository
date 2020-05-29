@@ -42,8 +42,10 @@ namespace ExpededoraForms
         }
         private void btnIngresarLata_Click(object sender, EventArgs e)
         {
-            Lata l = new Lata(txtCodigo.Text, Convert.ToDouble(txtPrecio), Convert.ToDouble(txtVolumen));
+            Lata l = new Lata(txtCodigo.Text, Convert.ToDouble(txtPrecio.Text), Convert.ToDouble(txtVolumen.Text));
             expendedora.AgregarLata(l);
+            MessageBox.Show("La lata ha sido ingresada exitosamente");
+            this.Owner.Show();
             this.Dispose();
         }
 

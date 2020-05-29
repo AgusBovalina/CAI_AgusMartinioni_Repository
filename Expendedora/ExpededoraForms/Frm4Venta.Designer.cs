@@ -41,7 +41,7 @@
             this.txtDescripLata.Enabled = false;
             this.txtDescripLata.Location = new System.Drawing.Point(30, 68);
             this.txtDescripLata.Name = "txtDescripLata";
-            this.txtDescripLata.Size = new System.Drawing.Size(390, 20);
+            this.txtDescripLata.Size = new System.Drawing.Size(202, 20);
             this.txtDescripLata.TabIndex = 0;
             this.txtDescripLata.Text = " ";
             // 
@@ -68,14 +68,14 @@
             this.txtVuelto.Enabled = false;
             this.txtVuelto.Location = new System.Drawing.Point(30, 155);
             this.txtVuelto.Name = "txtVuelto";
-            this.txtVuelto.Size = new System.Drawing.Size(390, 20);
+            this.txtVuelto.Size = new System.Drawing.Size(202, 20);
             this.txtVuelto.TabIndex = 2;
             this.txtVuelto.Text = " ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 205);
+            this.label3.Location = new System.Drawing.Point(22, 205);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(227, 13);
             this.label3.TabIndex = 4;
@@ -83,10 +83,10 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(288, 193);
+            this.btnAceptar.Location = new System.Drawing.Point(65, 237);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(132, 37);
-            this.btnAceptar.TabIndex = 5;
+            this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 264);
+            this.ClientSize = new System.Drawing.Size(261, 289);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

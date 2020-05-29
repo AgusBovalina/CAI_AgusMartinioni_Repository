@@ -14,11 +14,16 @@ namespace ExpededoraForms
     public partial class Frm3MostrarStock : Form
     {
         private Expendedora expendedora;
-        private string codigoLata;
-        public string volumen;
-        public string precio;
-       
-        
+
+
+        private string codigo;
+        private string volumen;
+        private string precio;
+
+        public string Codigo { get => codigo; set => codigo = value; }
+        public string Volumen { get => volumen; set => volumen = value; }
+        public string Precio { get => precio; set => precio = value; }
+
         public Frm3MostrarStock(Expendedora exp, Form formPropietario)
         {
             this.Owner = formPropietario;
@@ -26,14 +31,7 @@ namespace ExpededoraForms
             InitializeComponent();
         }
 
-        public Frm3MostrarStock(Expendedora exp, Form formPropietario, string codigoLata)
-        {
-            this.Owner = formPropietario;
-            this.expendedora = exp;
-            this.codigoLata = codigoLata;
-            InitializeComponent();
-
-        }
+        
 
         #region "Eventos"
         private void Frm3MostrarStock_Load(object sender, EventArgs e)
@@ -55,7 +53,7 @@ namespace ExpededoraForms
 
         }
 
-        private void lstLataToString_SelectedIndexChanged(object sender, EventArgs e)
+       private void lstLataToString_SelectedIndexChanged(object sender, EventArgs e)
         {
             Lata seleccionada = (Lata)lstLataToString.SelectedItem;
             
@@ -66,7 +64,17 @@ namespace ExpededoraForms
             }
         }
 
-       
+        /*private void lstLataToString_Enter(object sender, EventArgs e)
+        {
+            Lata seleccionada = (Lata)lstLataToString.SelectedItem;
+
+            if (seleccionada != null)
+            {
+                CompletarFormularioLata(seleccionada);
+
+            }
+        }*/
+
         private void cmbCodigo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             CargarListaFiltrada();
@@ -88,16 +96,19 @@ namespace ExpededoraForms
         {
             if (this.Owner is Frm3ExtraerLata)
             {
-                
-
-                //aceptar debería pasarle data a extraerlata
-
+                Volumen = txtVolumen.Text;
+                Precio = txtPrecio.Text;
+                ((Frm3ExtraerLata)this.Owner).CompletarVolumenPrecio();
+                this.Owner.Show();
+                this.Dispose();
             }
             else if (this.Owner is Frm2MenuPrincipal)
             {
+                this.Owner.Show();
                 this.Dispose();
             }
         }
+        
 
         private void Frm3MostrarStock_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -204,7 +215,7 @@ namespace ExpededoraForms
                 txtSabor.Enabled = false;
 
 
-                cmbCodigo.Text = codigoLata;
+                cmbCodigo.Text = Codigo;
             //considerar excepcion por falta de latas
                 txtNombre.Text = LataHelper.GetVariedad(cmbCodigo.Text).Nombre;
                 txtSabor.Text = LataHelper.GetVariedad(cmbCodigo.Text).Sabor;
@@ -212,7 +223,8 @@ namespace ExpededoraForms
             
         }
 
-        
+
+
 
 
 
@@ -226,6 +238,6 @@ namespace ExpededoraForms
 
         #endregion
 
-
+        
     }
 }

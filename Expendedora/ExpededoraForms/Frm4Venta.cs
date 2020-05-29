@@ -27,9 +27,9 @@ namespace ExpededoraForms
 
         private void Frm4Venta_Load(object sender, EventArgs e)
         {
-            Frm4Venta.ActiveForm.Text = expendedora.Proveedor;
+            this.Text = expendedora.Proveedor;
             txtDescripLata.Text = lataExtraida.ToString();
-            txtVuelto.Text = vuelto.ToString();
+            txtVuelto.Text = "$ " + vuelto.ToString();
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {

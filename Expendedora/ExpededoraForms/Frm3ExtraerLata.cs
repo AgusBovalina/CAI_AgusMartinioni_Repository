@@ -16,49 +16,53 @@ namespace ExpededoraForms
         private Expendedora expendedora;
         private string listLabel;
         private Frm3MostrarStock mS;
+        private string codigo;
 
-
-
+        public string Codigo { get => codigo; set => codigo = value; }
 
         public Frm3ExtraerLata(Expendedora exp, Form formPropietario)
         {
-
+            //Frm3MostrarStock mS = new Frm3MostrarStock(expendedora, this);
+            
             this.expendedora = exp;
             this.listLabel = "Doble click para elegir lata";
             this.Owner = formPropietario;
-            Frm3MostrarStock mS = new Frm3MostrarStock(expendedora, this, txtCodigo.Text);
+            
             InitializeComponent();
         }
 
         #region "Eventos"
         private void Frm3ExtraerLata_Load(object sender, EventArgs e)
         {
+            
+            
             lblListlabel.Text = listLabel;
             
             this.CargarLista();
 
         }
-
         
+
         private void btnMostrarStock_Click(object sender, EventArgs e)
         {
 
-            //Frm3MostrarStock mS = new Frm3MostrarStock(expendedora, this, txtCodigo.Text);
+            mS = new Frm3MostrarStock(expendedora, this);
+            mS.Codigo = txtCodigo.Text;
             mS.Owner = this;
             mS.Show();
+            this.Hide();
 
         }
 
-        
 
         private void btnExtraerLata_Click(object sender, EventArgs e)
         {
-            Lata lata = new Lata(txtCodigo.Text, Convert.ToDouble(txtVolumen.Text), Convert.ToDouble(txtPrecio.Text));
+            Lata lata = new Lata(txtCodigo.Text, Convert.ToDouble(txtPrecio.Text), Convert.ToDouble(txtVolumen.Text));
             Venta nuevaVenta = expendedora.ExtraerLata(lata, Convert.ToDouble(txtIngreseDinero.Text));
             Frm4Venta v = new Frm4Venta(nuevaVenta,expendedora, this);
             v.Owner = this;
             v.Show();
-            this.Dispose();
+            this.Hide();
         }
 
         private void lstVariedad_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,20 +115,18 @@ namespace ExpededoraForms
 
         private void GrisarCampos()
         {
-            if(txtVolumen.Text=="" && txtPrecio.Text=="")
+            if(txtVolumen.Text == string.Empty && txtPrecio.Text== string.Empty)
             {
                 lblVolumen.Visible = false;
                 txtVolumen.Visible = false;
                 lblPrecio.Visible = false;
                 txtPrecio.Visible = false;
+                lblPago.Visible = false;
+                txtIngreseDinero.Visible = false;
+
+                btnExtraerLata.Enabled = false;
             }
-            else
-            {
-                lblVolumen.Visible = true;
-                txtVolumen.Visible = true;
-                lblPrecio.Visible = true;
-                txtPrecio.Visible = true;
-            }
+            
         }
 
         private void CompletarFormularioVariedad(Variedad seleccionada)
@@ -140,28 +142,28 @@ namespace ExpededoraForms
             txtSabor.Text = seleccionada.Sabor;
         }
 
-        private void CompletarVolumenPrecio()
+        public void CompletarVolumenPrecio()
         {
+            txtVolumen.Text = mS.Volumen;
+            txtPrecio.Text = mS.Precio;
+
             lblVolumen.Visible = true;
             lblPrecio.Visible = true;
+            lblPago.Visible = true;
             txtVolumen.Visible = true;
-            txtPrecio.Visible = true;
 
-            txtVolumen.Text = mS.volumen;
-            txtPrecio.Text = mS.precio;
+            txtPrecio.Visible = true;
+            txtIngreseDinero.Visible = true;
+
+            btnExtraerLata.Enabled = true;
+            
+
+            
         }
 
-        //no funciona porque no lo puedo llamar, ni siendo publico
-        public void prueba(string volumen, string precio)
-        {
-            lblVolumen.Visible = true;
-            lblPrecio.Visible = true;
-            txtVolumen.Visible = true;
-            txtPrecio.Visible = true;
+        
 
-            txtVolumen.Text = mS.volumen;
-            txtPrecio.Text = mS.precio;
-        }
+
 
         #endregion
 
