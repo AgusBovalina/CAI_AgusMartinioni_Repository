@@ -204,6 +204,7 @@
             this.Name = "Frm3ExtraerLata";
             this.Text = "Extraer Lata";
             this.Load += new System.EventHandler(this.Frm3ExtraerLata_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm3ExtraerLata_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

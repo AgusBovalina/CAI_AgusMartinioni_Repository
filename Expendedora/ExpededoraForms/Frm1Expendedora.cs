@@ -27,11 +27,9 @@ namespace ExpededoraForms
                                    
         }
 
-        private void FrmExpededora_Load(object sender, EventArgs e)
+        private void Frm1Expendedora_Load(object sender, EventArgs e)
         {
-            
-
-            this.Text = expendedora.Proveedor;
+            Text = expendedora.Proveedor;
         }
 
         private void BtnEncender_Click(object sender, EventArgs e)
@@ -42,7 +40,10 @@ namespace ExpededoraForms
             mP.Show();
             this.Hide();
         }
+        private void Frm1Expendedora_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           this.Dispose();
+        }
 
-        
     }
 }

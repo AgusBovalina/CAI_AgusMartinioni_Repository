@@ -64,6 +64,8 @@
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.Load += new System.EventHandler(this.Frm1Expendedora_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm1Expendedora_FormClosing);
 
         }
 

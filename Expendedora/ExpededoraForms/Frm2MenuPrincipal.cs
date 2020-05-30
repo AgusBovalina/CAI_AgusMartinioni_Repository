@@ -24,7 +24,7 @@ namespace ExpededoraForms
         }
        
 
-        private void FrmMenuPrincipal_Load(object sender, EventArgs e)
+        private void Frm2MenuPrincipal_Load(object sender, EventArgs e)
         {
             this.label1.Text = expendedora.Proveedor;
         }
@@ -67,7 +67,7 @@ namespace ExpededoraForms
             this.Owner.Dispose();
             this.Dispose();
         }
-        private void Frm3MostrarStock_FormClosing(object sender, FormClosingEventArgs e)
+        private void Frm2MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Owner.Dispose();
             this.Dispose();

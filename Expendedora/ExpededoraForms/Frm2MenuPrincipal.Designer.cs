@@ -111,7 +111,8 @@
             this.Text = "Menu Principal";
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
+            this.Load += new System.EventHandler(this.Frm2MenuPrincipal_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm2MenuPrincipal_FormClosing);
 
         }
 
