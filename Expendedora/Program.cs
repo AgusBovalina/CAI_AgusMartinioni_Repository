@@ -209,7 +209,7 @@ namespace EjExpendedora
                 Console.WriteLine(string.Format("El stock disponible en la expendedora {0} es {1}.", expendedora, expendedora.GetCapacidadRestante()));
                 foreach (Lata l in expendedora.Latas)
                 {
-                    Console.WriteLine(expendedora.GetStock(l));
+                    Console.WriteLine(expendedora.GetStock(l,expendedora.Latas));
                     Console.WriteLine(l.ToString());
                 }
             }

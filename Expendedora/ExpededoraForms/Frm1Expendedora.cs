@@ -21,7 +21,7 @@ namespace ExpededoraForms
         public Frm1Expendedora(Expendedora exp)
         {
             this.expendedora = exp;
-            this.expendedora.CargarLatasHardcodeadas();
+            
             LataHelper.AgregarList();
             InitializeComponent();
                                    
@@ -42,5 +42,7 @@ namespace ExpededoraForms
             mP.Show();
             this.Hide();
         }
+
+        
     }
 }

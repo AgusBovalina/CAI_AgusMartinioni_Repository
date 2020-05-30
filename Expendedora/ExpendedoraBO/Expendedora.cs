@@ -18,19 +18,22 @@ namespace ExpendedoraBO
         private bool encendida;
         private const int cantCapacidad = 100;
 
-        public void CargarLatasHardcodeadas()
+        public List<Lata> CargarLatasHardcodeadas()
         {
+            List<Lata> listaHC = new List<Lata>();
             Lata a = new Lata("CO1", 20, 250);
             Lata b = new Lata("CO2", 25, 250);
             Lata c = new Lata("FA1", 15, 250);
             Lata d = new Lata("LL1", 20, 400);
             Lata e = new Lata("FA1", 15, 250);
 
-            Latas.Add(a);
-            Latas.Add(b);
-            Latas.Add(c);
-            Latas.Add(d);
-            Latas.Add(e);
+            listaHC.Add(a);
+            listaHC.Add(b);
+            listaHC.Add(c);
+            listaHC.Add(d);
+            listaHC.Add(e);
+
+            return listaHC;
         }
 
 
@@ -45,8 +48,6 @@ namespace ExpendedoraBO
             this.SaldoInicial = dinero;
             this.Encendida = false;
             LataHelper.AgregarList();
-
-
         }
 
 
@@ -108,8 +109,10 @@ namespace ExpendedoraBO
 
         //MÉTODOS
 
+        
         public void AgregarLata(Lata lata)
         {
+
 
             if (LataHelper.GetCodigoCorrecto(lata.Codigo) != "" && this.GetLataSeleccionada(lata.Codigo, lata.Volumen, lata.Precio) == null)
             {
@@ -164,10 +167,10 @@ namespace ExpendedoraBO
             return string.Format("Dinero acumulado: {0}", Dinero);
         }
 
-        public int GetStock(Lata lata)
+        public int GetStock(Lata lata, List<Lata> listaLata)
         {
             int stock = 0;
-            foreach (Lata l in Latas)
+            foreach (Lata l in listaLata)
             {
                 if (lata.Codigo == l.Codigo && lata.Volumen == l.Volumen && lata.Precio == l.Precio)
                 {

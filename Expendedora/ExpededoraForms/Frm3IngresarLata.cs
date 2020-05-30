@@ -67,7 +67,7 @@ namespace ExpededoraForms
                     }
                     catch(FormatException)
                     {
-                        MessageBox.Show("El formato ingresado de volumen no es el correcto");
+                        MessageBox.Show("El formato ingresado de volumen no es el correcto o está vacío");
                         txtVolumen.Text = string.Empty;
                     }
                     try
@@ -76,7 +76,7 @@ namespace ExpededoraForms
                     }
                     catch(FormatException)
                     {
-                        MessageBox.Show("El formato ingresado de volumen no es el correcto");
+                        MessageBox.Show("El formato ingresado de precio no es el correcto o está vacío");
                         txtPrecio.Text = string.Empty;
                     }
                     
@@ -147,6 +147,7 @@ namespace ExpededoraForms
             txtNombre.Text = seleccionada.Nombre;
             txtSabor.Text = seleccionada.Sabor;
         }
+
 
 
 

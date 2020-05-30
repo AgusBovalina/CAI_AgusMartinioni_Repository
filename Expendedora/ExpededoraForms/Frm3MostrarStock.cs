@@ -28,6 +28,8 @@ namespace ExpededoraForms
         {
             this.Owner = formPropietario;
             this.expendedora = exp;
+            //Para agregar latas
+            this.expendedora.Latas.AddRange( this.expendedora.CargarLatasHardcodeadas());
             InitializeComponent();
         }
 
@@ -40,6 +42,7 @@ namespace ExpededoraForms
 
             if (this.Owner is Frm3ExtraerLata)
             {
+                
                 CompletarCamposConInfoExterna();
                 CargarListaFiltrada();
             }
@@ -157,7 +160,7 @@ namespace ExpededoraForms
             txtVolumen.Text = string.Empty;
             txtPrecio.Text = string.Empty;
 
-            txtStock.Text = expendedora.Latas.Count().ToString();
+            CompletarStockTotal();
 
             
 
@@ -220,7 +223,9 @@ namespace ExpededoraForms
             txtPrecio.Text = seleccionada.Precio.ToString();
             txtVolumen.Text = seleccionada.Volumen.ToString();
 
-            txtStock.Text = expendedora.GetStock(seleccionada).ToString();
+            CompletarStock();
+
+            
            
             
         }
@@ -228,19 +233,35 @@ namespace ExpededoraForms
         private void CompletarCamposConInfoExterna()
         {
             
-                cmbCodigo.Enabled = false;
-                txtNombre.Enabled = false;
-                txtSabor.Enabled = false;
+            cmbCodigo.Enabled = false;
+            txtNombre.Enabled = false;
+            txtSabor.Enabled = false;
 
 
-                cmbCodigo.Text = Codigo;
-            //considerar excepcion por falta de latas
-                txtNombre.Text = LataHelper.GetVariedad(cmbCodigo.Text).Nombre;
-                txtSabor.Text = LataHelper.GetVariedad(cmbCodigo.Text).Sabor;
+            cmbCodigo.Text = Codigo;
+            
+            txtNombre.Text = LataHelper.GetVariedad(cmbCodigo.Text).Nombre;
+            txtSabor.Text = LataHelper.GetVariedad(cmbCodigo.Text).Sabor;
+            txtVolumen.Text = string.Empty;
+            txtPrecio.Text = string.Empty;
+
+            CompletarStock();
             
             
         }
 
+        private void CompletarStockTotal()
+        {
+            
+            txtStock.Text = this.expendedora.Latas.Count().ToString();
+            
+        }
+
+        private void CompletarStock()
+        {
+            Lata lata = new Lata(cmbCodigo.Text, Convert.ToDouble(txtPrecio.Text), Convert.ToDouble(txtVolumen.Text));
+            txtStock.Text= this.expendedora.GetStock(lata, LatasFiltrada(cmbCodigo.Text)).ToString();
+        }
 
 
 

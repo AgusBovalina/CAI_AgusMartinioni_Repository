@@ -174,6 +174,7 @@
             this.Controls.Add(this.lstVariedad);
             this.Name = "Frm3IngresarLata";
             this.Text = "Ingresar Lata";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm3IngresarLata_FormClosing);
             this.Load += new System.EventHandler(this.Frm3IngresarLata_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -34,7 +34,7 @@
             // 
             // btnEncender
             // 
-            this.btnEncender.Location = new System.Drawing.Point(22, 30);
+            this.btnEncender.Location = new System.Drawing.Point(26, 57);
             this.btnEncender.Name = "btnEncender";
             this.btnEncender.Size = new System.Drawing.Size(180, 36);
             this.btnEncender.TabIndex = 0;
@@ -45,11 +45,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(49, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 2;
             this.label1.Text = "La máquina está apagada.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -57,9 +56,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(238, 94);
+            this.ClientSize = new System.Drawing.Size(233, 132);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEncender);
+            this.MaximizeBox = false;
             this.Name = "Frm1Expendedora";
             this.Text = "Form1";
             this.ResumeLayout(false);

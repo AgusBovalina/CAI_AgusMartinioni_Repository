@@ -106,6 +106,8 @@ namespace ExpededoraForms
         {
             Variedad seleccionada = (Variedad)lstVariedad.SelectedItem;
 
+            LimpiarCampos();
+
             if (seleccionada != null)
             {
                 CompletarFormularioVariedad(seleccionada);
@@ -142,10 +144,14 @@ namespace ExpededoraForms
             return valido;
         }
 
-        private void LimpiarCampos()
+        private void LimpiarIndiceLista()
         {
             lstVariedad.SelectedIndex = -1;
-
+                       
+        }
+        private void LimpiarCampos()
+        {
+            
             txtCodigo.Text = string.Empty;
             txtNombre.Text = string.Empty;
             txtSabor.Text = string.Empty;
@@ -160,6 +166,8 @@ namespace ExpededoraForms
         {
             lstVariedad.DataSource = null;
             lstVariedad.DataSource = LataHelper.ListaVariedad;
+
+            LimpiarIndiceLista();
 
             LimpiarCampos();
         }

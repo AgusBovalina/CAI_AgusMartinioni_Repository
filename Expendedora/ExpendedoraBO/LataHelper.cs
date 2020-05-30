@@ -50,14 +50,7 @@ namespace ExpendedoraBO
                 fa1.Codigo.ToUpper(),
                 fa2.Codigo.ToUpper()
             };
-            /*listaCodigos.Add(co1.Codigo.ToUpper());
-            listaCodigos.Add(co2.Codigo.ToUpper());
-            listaCodigos.Add(ll1.Codigo.ToUpper());
-            listaCodigos.Add(ll2.Codigo.ToUpper());
-            listaCodigos.Add(fa1.Codigo.ToUpper());
-            listaCodigos.Add(fa2.Codigo.ToUpper());*/
-
-
+           
 
             return listaCodigos;
         }
