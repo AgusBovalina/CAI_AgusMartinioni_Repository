@@ -39,8 +39,8 @@ namespace ExpededoraForms
         }
         private void Frm4Venta_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Owner.Owner.Show();
-            this.Owner.Dispose();
+            this.Owner.Show();
+            
             this.Dispose();
         }
 

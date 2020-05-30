@@ -151,7 +151,6 @@
             this.lstLataToString.Size = new System.Drawing.Size(393, 303);
             this.lstLataToString.TabIndex = 0;
             this.lstLataToString.SelectedIndexChanged += new System.EventHandler(this.LstLataToString_SelectedIndexChanged);
-            //this.lstLataToString.Enter += new System.EventHandler(this.lstLataToString_Enter);
             // 
             // label7
             // 
@@ -177,7 +176,7 @@
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(173, 37);
             this.btnLimpiar.TabIndex = 28;
-            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.Text = "Lista completa";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 

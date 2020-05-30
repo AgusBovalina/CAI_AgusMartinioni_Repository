@@ -87,14 +87,14 @@
             // 
             // txtVolumen
             // 
-            this.txtVolumen.Location = new System.Drawing.Point(505, 374);
+            this.txtVolumen.Location = new System.Drawing.Point(505, 306);
             this.txtVolumen.Name = "txtVolumen";
             this.txtVolumen.Size = new System.Drawing.Size(167, 20);
             this.txtVolumen.TabIndex = 6;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(505, 302);
+            this.txtPrecio.Location = new System.Drawing.Point(505, 378);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(167, 20);
             this.txtPrecio.TabIndex = 5;
@@ -129,7 +129,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(495, 275);
+            this.label5.Location = new System.Drawing.Point(495, 351);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 10;
@@ -138,7 +138,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(495, 348);
+            this.label6.Location = new System.Drawing.Point(495, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 11;

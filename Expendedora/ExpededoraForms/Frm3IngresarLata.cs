@@ -51,8 +51,7 @@ namespace ExpededoraForms
                     expendedora.AgregarLata(l);
                     CargarLista();
                     MessageBox.Show("La lata ha sido ingresada exitosamente");
-                    this.Owner.Show();
-                    this.Dispose();
+                    
                 }
                 catch (CapacidadInsuficienteException ex)
                 {

@@ -91,6 +91,7 @@ namespace ExpededoraForms
                     
                     MessageBox.Show("El formato ingresado de dinero no es el correcto");
                     txtIngreseDinero.Text = string.Empty;
+                    //aca tira el error del objeto?
 
                 }
                 catch (Exception ex)

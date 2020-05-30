@@ -52,9 +52,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(33, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Ganancias";
+            this.label3.Text = "Tenencia";
             // 
             // label2
             // 
@@ -114,9 +114,10 @@
             this.Controls.Add(this.txtSaldoInicial);
             this.Name = "Frm3ObtenerBalance";
             this.Text = "Balance";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm3ObtenerBalance_FormClosing);
+            this.Load += new System.EventHandler(this.FrmObtenerBalance_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.Load += new System.EventHandler(this.FrmObtenerBalance_Load);
 
         }
 

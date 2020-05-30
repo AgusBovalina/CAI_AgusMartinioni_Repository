@@ -105,6 +105,7 @@
             this.Name = "Frm4Venta";
             this.Text = "Venta";
             this.Load += new System.EventHandler(this.Frm4Venta_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm4Venta_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
