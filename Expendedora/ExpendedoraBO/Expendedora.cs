@@ -48,6 +48,9 @@ namespace ExpendedoraBO
             this.SaldoInicial = dinero;
             this.Encendida = false;
             LataHelper.AgregarList();
+
+            //Para agregar latasHC
+            Latas.AddRange(CargarLatasHardcodeadas());
         }
 
 

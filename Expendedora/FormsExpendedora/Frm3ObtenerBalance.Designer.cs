@@ -113,9 +113,11 @@
             this.Controls.Add(this.txtGanacias);
             this.Controls.Add(this.txtSaldoInicial);
             this.Name = "Frm3ObtenerBalance";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Balance";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm3ObtenerBalance_FormClosing);
             this.Load += new System.EventHandler(this.FrmObtenerBalance_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm3ObtenerBalance_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -45,8 +45,15 @@ namespace ExpendedoraForms
 
         private void BtnMostrarStock_Click(object sender, EventArgs e)
         {
-
-            if (ValidarCampos())
+            if (txtCodigo.Text == string.Empty)
+            {
+                mS = new Frm3MostrarStock(expendedora, this);
+                
+                mS.Owner = this;
+                mS.Show();
+                this.Hide();
+            }
+            else                
             {
                 mS = new Frm3MostrarStock(expendedora, this);
                 mS.Codigo = txtCodigo.Text;
@@ -115,10 +122,17 @@ namespace ExpendedoraForms
             }
         }
 
+        private void Frm3ExtraerLata_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((Keys)e.KeyValue == Keys.Escape)
+            {
+                CloseWindow();
+            }
+        }
+
         private void Frm3ExtraerLata_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Owner.Show();
-            this.Dispose();
+            CloseWindow();
         }
 
 
@@ -202,8 +216,11 @@ namespace ExpendedoraForms
             txtSabor.Text = seleccionada.Sabor;
         }
 
-        public void CompletarVolumenPrecio()
+        public void CompletarCamposStock()
         {
+            txtCodigo.Text = mS.Codigo;
+            txtNombre.Text = mS.Nombre;
+            txtSabor.Text = mS.Sabor;
             txtVolumen.Text = mS.Volumen;
             txtPrecio.Text = mS.Precio;
 
@@ -221,7 +238,13 @@ namespace ExpendedoraForms
             
         }
 
-        
+        private void CloseWindow()
+        {
+            this.Owner.Show();
+            this.Dispose();
+        }
+
+
 
 
 

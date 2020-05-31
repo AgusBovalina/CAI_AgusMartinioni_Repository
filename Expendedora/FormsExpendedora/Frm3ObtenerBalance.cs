@@ -35,11 +35,23 @@ namespace ExpendedoraForms
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            Owner.Show();
-            this.Dispose();
+            CloseWindow();
+        }
+
+        private void Frm3ObtenerBalance_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((Keys)e.KeyValue == Keys.Escape)
+            {
+                CloseWindow();
+            }
         }
 
         private void Frm3ObtenerBalance_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CloseWindow();
+        }
+
+        private void CloseWindow()
         {
             this.Owner.Show();
             this.Dispose();

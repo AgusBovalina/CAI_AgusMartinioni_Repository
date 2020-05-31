@@ -64,14 +64,32 @@ namespace ExpendedoraForms
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            this.Owner.Dispose();
-            this.Dispose();
+            CloseWindow();
         }
-        private void Frm2MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+
+
+        private void Frm2MenuPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((Keys)e.KeyValue == Keys.Escape)
+            {
+                CloseWindow();
+            }
+        }
+
+            private void Frm2MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CloseWindow();
+        }
+
+        
+                    
+            
+        
+
+        private void CloseWindow()
         {
             this.Owner.Dispose();
             this.Dispose();
         }
-        
     }
 }

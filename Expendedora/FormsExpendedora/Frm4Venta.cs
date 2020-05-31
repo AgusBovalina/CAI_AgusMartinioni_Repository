@@ -37,13 +37,25 @@ namespace ExpendedoraForms
             this.Owner.Dispose();
             this.Dispose();
         }
-        private void Frm4Venta_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Owner.Show();
-            
-            this.Dispose();
-        }
 
         
+        
+        private void Frm4Venta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((Keys)e.KeyValue == Keys.Escape)
+            {
+                CloseWindow();
+            }
+        }
+        private void Frm4Venta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CloseWindow();
+        }
+
+        private void CloseWindow()
+        {
+            this.Owner.Show();
+            this.Dispose();
+        }
     }
 }

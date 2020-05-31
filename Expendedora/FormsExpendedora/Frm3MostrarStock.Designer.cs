@@ -48,11 +48,12 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAceptar.Location = new System.Drawing.Point(540, 393);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(173, 37);
-            this.btnAceptar.TabIndex = 25;
+            this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
@@ -175,7 +176,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(320, 393);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(173, 37);
-            this.btnLimpiar.TabIndex = 28;
+            this.btnLimpiar.TabIndex = 2;
             this.btnLimpiar.Text = "Lista completa";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
@@ -212,9 +213,11 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lstLataToString);
             this.Name = "Frm3MostrarStock";
-            this.Text = "Mostrar Stock";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Stock";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm3MostrarStock_FormClosing);
             this.Load += new System.EventHandler(this.Frm3MostrarStock_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm3MostrarStock_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

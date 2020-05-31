@@ -90,14 +90,14 @@
             this.txtVolumen.Location = new System.Drawing.Point(505, 306);
             this.txtVolumen.Name = "txtVolumen";
             this.txtVolumen.Size = new System.Drawing.Size(167, 20);
-            this.txtVolumen.TabIndex = 6;
+            this.txtVolumen.TabIndex = 1;
             // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(505, 378);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(167, 20);
-            this.txtPrecio.TabIndex = 5;
+            this.txtPrecio.TabIndex = 2;
             // 
             // label2
             // 
@@ -149,7 +149,7 @@
             this.btnIngresarLata.Location = new System.Drawing.Point(505, 428);
             this.btnIngresarLata.Name = "btnIngresarLata";
             this.btnIngresarLata.Size = new System.Drawing.Size(167, 37);
-            this.btnIngresarLata.TabIndex = 12;
+            this.btnIngresarLata.TabIndex = 3;
             this.btnIngresarLata.Text = "Ingresar Lata";
             this.btnIngresarLata.UseVisualStyleBackColor = true;
             this.btnIngresarLata.Click += new System.EventHandler(this.BtnIngresarLata_Click);
@@ -173,9 +173,11 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lstVariedad);
             this.Name = "Frm3IngresarLata";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar Lata";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm3IngresarLata_FormClosing);
             this.Load += new System.EventHandler(this.Frm3IngresarLata_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm3IngresarLata_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

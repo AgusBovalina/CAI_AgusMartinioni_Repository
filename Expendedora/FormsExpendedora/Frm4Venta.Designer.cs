@@ -75,7 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 205);
+            this.label3.Location = new System.Drawing.Point(19, 194);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(227, 13);
             this.label3.TabIndex = 4;
@@ -103,9 +103,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescripLata);
             this.Name = "Frm4Venta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venta";
-            this.Load += new System.EventHandler(this.Frm4Venta_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm4Venta_FormClosing);
+            this.Load += new System.EventHandler(this.Frm4Venta_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm4Venta_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

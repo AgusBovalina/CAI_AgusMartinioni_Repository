@@ -38,6 +38,7 @@
             // 
             // btnExtraerLata
             // 
+            this.btnExtraerLata.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExtraerLata.Location = new System.Drawing.Point(38, 85);
             this.btnExtraerLata.Name = "btnExtraerLata";
             this.btnExtraerLata.Size = new System.Drawing.Size(469, 54);
@@ -48,6 +49,7 @@
             // 
             // btnIngresarLata
             // 
+            this.btnIngresarLata.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnIngresarLata.Location = new System.Drawing.Point(38, 167);
             this.btnIngresarLata.Name = "btnIngresarLata";
             this.btnIngresarLata.Size = new System.Drawing.Size(469, 54);
@@ -58,6 +60,7 @@
             // 
             // btnBalance
             // 
+            this.btnBalance.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBalance.Location = new System.Drawing.Point(38, 333);
             this.btnBalance.Name = "btnBalance";
             this.btnBalance.Size = new System.Drawing.Size(469, 54);
@@ -68,6 +71,7 @@
             // 
             // btnMostrarStock
             // 
+            this.btnMostrarStock.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnMostrarStock.Location = new System.Drawing.Point(38, 251);
             this.btnMostrarStock.Name = "btnMostrarStock";
             this.btnMostrarStock.Size = new System.Drawing.Size(469, 54);
@@ -88,6 +92,7 @@
             // 
             // btnSalir
             // 
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Location = new System.Drawing.Point(38, 414);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(469, 54);
@@ -107,12 +112,15 @@
             this.Controls.Add(this.btnMostrarStock);
             this.Controls.Add(this.btnIngresarLata);
             this.Controls.Add(this.btnExtraerLata);
+            this.KeyPreview = true;
             this.Name = "Frm2MenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm2MenuPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.Frm2MenuPrincipal_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm2MenuPrincipal_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.Load += new System.EventHandler(this.Frm2MenuPrincipal_Load);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm2MenuPrincipal_FormClosing);
 
         }
 

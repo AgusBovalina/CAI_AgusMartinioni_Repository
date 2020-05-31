@@ -88,10 +88,16 @@ namespace ExpendedoraForms
 
         }
 
+        private void Frm3IngresarLata_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((Keys)e.KeyValue == Keys.Escape)
+            {
+                CloseWindow();
+            }
+        }
         private void Frm3IngresarLata_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Owner.Show();
-            this.Dispose();
+            CloseWindow();
         }
         #endregion
 
@@ -147,6 +153,11 @@ namespace ExpendedoraForms
             txtSabor.Text = seleccionada.Sabor;
         }
 
+        private void CloseWindow()
+        {
+            this.Owner.Show();
+            this.Dispose();
+        }
 
 
 

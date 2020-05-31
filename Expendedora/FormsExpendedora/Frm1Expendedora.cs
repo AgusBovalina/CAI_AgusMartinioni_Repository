@@ -40,6 +40,14 @@ namespace ExpendedoraForms
             mP.Show();
             this.Hide();
         }
+
+        private void Frm3ExtraerLata_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((Keys)e.KeyValue == Keys.Escape)
+            {
+                this.Dispose();
+            }
+        }
         private void Frm1Expendedora_FormClosing(object sender, FormClosingEventArgs e)
         {
            this.Dispose();

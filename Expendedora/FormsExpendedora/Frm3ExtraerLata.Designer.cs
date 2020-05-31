@@ -48,7 +48,7 @@
             // 
             // btnMostrarStock
             // 
-            this.btnMostrarStock.Location = new System.Drawing.Point(43, 286);
+            this.btnMostrarStock.Location = new System.Drawing.Point(41, 287);
             this.btnMostrarStock.Name = "btnMostrarStock";
             this.btnMostrarStock.Size = new System.Drawing.Size(174, 37);
             this.btnMostrarStock.TabIndex = 25;
@@ -59,7 +59,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 204);
+            this.label4.Location = new System.Drawing.Point(38, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 22;
@@ -68,7 +68,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 128);
+            this.label3.Location = new System.Drawing.Point(38, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 21;
@@ -77,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 52);
+            this.label2.Location = new System.Drawing.Point(38, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 20;
@@ -86,29 +86,29 @@
             // lblListlabel
             // 
             this.lblListlabel.AutoSize = true;
-            this.lblListlabel.Location = new System.Drawing.Point(288, 21);
+            this.lblListlabel.Location = new System.Drawing.Point(286, 22);
             this.lblListlabel.Name = "lblListlabel";
-            this.lblListlabel.Size = new System.Drawing.Size(132, 13);
+            this.lblListlabel.Size = new System.Drawing.Size(77, 13);
             this.lblListlabel.TabIndex = 17;
-            this.lblListlabel.Text = "Doble click para elegir lata";
+            this.lblListlabel.Text = "Elegir variedad";
             // 
             // txtSabor
             // 
-            this.txtSabor.Location = new System.Drawing.Point(50, 232);
+            this.txtSabor.Location = new System.Drawing.Point(48, 233);
             this.txtSabor.Name = "txtSabor";
             this.txtSabor.Size = new System.Drawing.Size(167, 20);
             this.txtSabor.TabIndex = 16;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(50, 154);
+            this.txtNombre.Location = new System.Drawing.Point(48, 155);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(167, 20);
             this.txtNombre.TabIndex = 15;
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(50, 77);
+            this.txtCodigo.Location = new System.Drawing.Point(48, 78);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(167, 20);
             this.txtCodigo.TabIndex = 14;
@@ -116,7 +116,7 @@
             // lstVariedad
             // 
             this.lstVariedad.FormattingEnabled = true;
-            this.lstVariedad.Location = new System.Drawing.Point(289, 52);
+            this.lstVariedad.Location = new System.Drawing.Point(287, 53);
             this.lstVariedad.Name = "lstVariedad";
             this.lstVariedad.Size = new System.Drawing.Size(393, 342);
             this.lstVariedad.TabIndex = 13;
@@ -125,7 +125,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(40, 429);
+            this.lblPrecio.Location = new System.Drawing.Point(38, 430);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(37, 13);
             this.lblPrecio.TabIndex = 29;
@@ -134,7 +134,7 @@
             // lblVolumen
             // 
             this.lblVolumen.AutoSize = true;
-            this.lblVolumen.Location = new System.Drawing.Point(40, 353);
+            this.lblVolumen.Location = new System.Drawing.Point(38, 354);
             this.lblVolumen.Name = "lblVolumen";
             this.lblVolumen.Size = new System.Drawing.Size(48, 13);
             this.lblVolumen.TabIndex = 28;
@@ -142,14 +142,14 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(50, 455);
+            this.txtPrecio.Location = new System.Drawing.Point(48, 456);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(167, 20);
             this.txtPrecio.TabIndex = 27;
             // 
             // txtVolumen
             // 
-            this.txtVolumen.Location = new System.Drawing.Point(50, 378);
+            this.txtVolumen.Location = new System.Drawing.Point(48, 379);
             this.txtVolumen.Name = "txtVolumen";
             this.txtVolumen.Size = new System.Drawing.Size(167, 20);
             this.txtVolumen.TabIndex = 26;
@@ -157,7 +157,7 @@
             // lblPago
             // 
             this.lblPago.AutoSize = true;
-            this.lblPago.Location = new System.Drawing.Point(291, 429);
+            this.lblPago.Location = new System.Drawing.Point(289, 430);
             this.lblPago.Name = "lblPago";
             this.lblPago.Size = new System.Drawing.Size(74, 13);
             this.lblPago.TabIndex = 31;
@@ -165,14 +165,14 @@
             // 
             // txtIngreseDinero
             // 
-            this.txtIngreseDinero.Location = new System.Drawing.Point(301, 455);
+            this.txtIngreseDinero.Location = new System.Drawing.Point(299, 456);
             this.txtIngreseDinero.Name = "txtIngreseDinero";
             this.txtIngreseDinero.Size = new System.Drawing.Size(167, 20);
             this.txtIngreseDinero.TabIndex = 30;
             // 
             // btnExtraerLata
             // 
-            this.btnExtraerLata.Location = new System.Drawing.Point(508, 438);
+            this.btnExtraerLata.Location = new System.Drawing.Point(506, 439);
             this.btnExtraerLata.Name = "btnExtraerLata";
             this.btnExtraerLata.Size = new System.Drawing.Size(174, 37);
             this.btnExtraerLata.TabIndex = 32;
@@ -184,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 516);
+            this.ClientSize = new System.Drawing.Size(726, 510);
             this.Controls.Add(this.btnExtraerLata);
             this.Controls.Add(this.lblPago);
             this.Controls.Add(this.txtIngreseDinero);
@@ -202,9 +202,11 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lstVariedad);
             this.Name = "Frm3ExtraerLata";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Extraer Lata";
-            this.Load += new System.EventHandler(this.Frm3ExtraerLata_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm3ExtraerLata_FormClosing);
+            this.Load += new System.EventHandler(this.Frm3ExtraerLata_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm3ExtraerLata_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
