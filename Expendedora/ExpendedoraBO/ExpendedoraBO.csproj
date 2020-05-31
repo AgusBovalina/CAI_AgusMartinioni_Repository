@@ -46,6 +46,7 @@
     <Compile Include="Lata.cs" />
     <Compile Include="LataHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XQA.cs" />
     <Compile Include="Variedad.cs" />
     <Compile Include="Venta.cs" />
   </ItemGroup>

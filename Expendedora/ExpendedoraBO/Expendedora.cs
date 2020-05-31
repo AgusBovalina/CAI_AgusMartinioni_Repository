@@ -18,25 +18,7 @@ namespace ExpendedoraBO
         private bool encendida;
         private const int cantCapacidad = 100;
 
-        public List<Lata> CargarLatasHardcodeadas()
-        {
-            List<Lata> listaHC = new List<Lata>();
-            Lata a = new Lata("CO1", 20, 250);
-            Lata b = new Lata("CO2", 25, 250);
-            Lata c = new Lata("FA1", 15, 250);
-            Lata d = new Lata("LL1", 20, 400);
-            Lata e = new Lata("FA1", 15, 250);
-
-            listaHC.Add(a);
-            listaHC.Add(b);
-            listaHC.Add(c);
-            listaHC.Add(d);
-            listaHC.Add(e);
-
-            return listaHC;
-        }
-
-
+       
         public Expendedora(string proveedor, int capacidad, double dinero)
         {
 
@@ -49,8 +31,8 @@ namespace ExpendedoraBO
             this.Encendida = false;
             LataHelper.AgregarList();
 
-            //Para agregar latasHC
-            Latas.AddRange(CargarLatasHardcodeadas());
+            //Para agregar latasHC para test
+            //Latas.AddRange(XQA.CargarLatasHardcodeadas());
         }
 
 
