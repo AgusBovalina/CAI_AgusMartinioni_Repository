@@ -251,6 +251,9 @@ namespace ExpendedoraForms
             cmbCodigo.Enabled = false;
             txtNombre.Enabled = false;
             txtSabor.Enabled = false;
+            txtVolumen.Enabled = false;
+            txtPrecio.Enabled = false;
+            txtStock.Enabled = false;
 
 
             cmbCodigo.Text = Codigo;
@@ -308,8 +311,9 @@ namespace ExpendedoraForms
 
 
 
+
         #endregion
 
-        
+       
     }
 }
